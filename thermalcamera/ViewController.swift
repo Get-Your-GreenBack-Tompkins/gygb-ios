@@ -57,6 +57,7 @@ class ViewController: UIViewController
         
         container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
+        container.backgroundColor = UIColor.white
         
         signinView = SigninView()
         signinView.translatesAutoresizingMaskIntoConstraints = false

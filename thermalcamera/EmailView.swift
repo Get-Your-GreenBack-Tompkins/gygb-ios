@@ -10,26 +10,54 @@ import GoogleSignIn
 
 class EmailView : UIView {
     
-    var signInButton : UIButton!
+    var emailField : UITextField!
+    var submitButton : UIButton!
+    
+    @objc func submit(sender: UIButton!) {
+        print("hi")
+        submitButton.setTitleColor(UIColor.blue, for: .normal)
+    }
+    
+    @objc func touchDown(sender: UIButton!) {
+        sender.setTitleColor(UIColor.green, for: .normal)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.clipsToBounds = true
-
-        print("HELLOOOOO")
         
-        signInButton = UIButton()
-        signInButton.clipsToBounds = true
-        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        emailField = UITextField()
+        emailField.clipsToBounds = true
+        emailField.translatesAutoresizingMaskIntoConstraints = false
+        emailField.layer.cornerRadius = 5
+        emailField.layer.borderWidth = 1
+        emailField.layer.borderColor = UIColor.black.cgColor
         
-        signInButton.setTitle("hello", for: .normal)
-        signInButton.backgroundColor = UIColor.orange
+        submitButton = UIButton()
+        submitButton.clipsToBounds = true
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(signInButton)
+        submitButton.setTitle("Submit", for: .normal)
+        submitButton.setTitleColor(UIColor.blue, for: .normal)
+        submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
+        submitButton.backgroundColor = UIColor.white
+        submitButton.layer.cornerRadius = 5
+        submitButton.layer.borderWidth = 1
+        submitButton.layer.borderColor = UIColor.black.cgColor
+        
+        addSubview(submitButton)
+        addSubview(emailField)
+        
         NSLayoutConstraint.activate([
+            emailField.widthAnchor.constraint(equalToConstant: 200),
+            emailField.heightAnchor.constraint(equalToConstant: 30),
+            emailField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emailField.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
             
-            signInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            signInButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            submitButton.widthAnchor.constraint(equalToConstant: 100),
+            submitButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            submitButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 30),
         ])
         
         updateConstraints()
