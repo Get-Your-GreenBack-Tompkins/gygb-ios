@@ -7,6 +7,7 @@
 //
 import Firebase
 import GoogleSignIn
+import Alamofire
 
 class EmailView : UIView {
     
@@ -16,6 +17,17 @@ class EmailView : UIView {
     @objc func submit(sender: UIButton!) {
         print("hi")
         submitButton.setTitleColor(UIColor.blue, for: .normal)
+        let emailResult = emailField.text
+        let parameters = [
+            "email": emailResult,
+            "marketing": true,
+            "source": "ios"
+            ] as [String : Any]
+        Alamofire.request("https://gygb-backend-v1.herokuapp.com/v1/user",
+                          method: .post,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default,
+                          headers: ["Content-Type": "application/json"])
     }
     
     @objc func touchDown(sender: UIButton!) {
@@ -32,6 +44,7 @@ class EmailView : UIView {
         emailField.layer.cornerRadius = 5
         emailField.layer.borderWidth = 1
         emailField.layer.borderColor = UIColor.black.cgColor
+        emailField.placeholder = "Enter email here"
         
         submitButton = UIButton()
         submitButton.clipsToBounds = true

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		080CA94123F8FC0C00E4B056 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */; };
 		080CA94323F9EF9400E4B056 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CA94223F9EF9400E4B056 /* EmailView.swift */; };
+		087869D0240DDED90057133B /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087869CF240DDED90057133B /* LegalView.swift */; };
 		088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* SigninView.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
 		08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */; };
@@ -61,6 +62,7 @@
 		02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "thermalcamera/Secrets/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		080CA94223F9EF9400E4B056 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
 				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
 				080CA94223F9EF9400E4B056 /* EmailView.swift */,
+				087869CF240DDED90057133B /* LegalView.swift */,
 			);
 			path = thermalcamera;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
+				087869D0240DDED90057133B /* LegalView.swift in Sources */,
 				080CA94323F9EF9400E4B056 /* EmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
