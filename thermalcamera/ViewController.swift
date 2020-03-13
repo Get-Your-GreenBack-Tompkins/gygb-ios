@@ -16,7 +16,32 @@ class ViewController: UIViewController
 
     var signinView : SigninView!
     var emailView: EmailView!
+    var legalView: LegalView!
     var container : UIView!
+    var declineButton : UIButton!
+    var acceptButton : UIButton!
+    var isPasswordValid = false
+
+    @objc func submit(sender: UIButton!) {
+        print("hi")
+        sender.setTitleColor(UIColor.blue, for: .normal)
+        self.legalView.removeFromSuperview()
+        self.acceptButton.removeFromSuperview()
+        self.declineButton.removeFromSuperview()
+        self.emailView = EmailView()
+        self.emailView.translatesAutoresizingMaskIntoConstraints = false
+        self.container.addSubview(self.emailView)
+        self.emailConstraints()
+    }
+    
+    
+    @objc func touchUp(sender: UIButton!) {
+        sender.setTitleColor(UIColor.blue, for: .normal)
+    }
+    
+    @objc func touchDown(sender: UIButton!) {
+        sender.setTitleColor(UIColor.green, for: .normal)
+    }
     
     
     func signinConstraints() {
@@ -35,8 +60,12 @@ class ViewController: UIViewController
     }
     
     func emailConstraints() {
-
-        //NSLayoutConstraint.deactivate(signinView.constraints)
+        
+       //NSLayoutConstraint.deactivate(signinView.constraints)
+        //NSLayoutConstraint.deactivate(legalView.constraints)
+        //NSLayoutConstraint.deactivate(acceptButton.constraints)
+        //NSLayoutConstraint.deactivate(declineButton.constraints)
+        
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: view.topAnchor),
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -47,6 +76,55 @@ class ViewController: UIViewController
             emailView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
             emailView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
             emailView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+         ])
+        view.updateConstraints()
+    }
+    
+    func legalConstraints() {
+        NSLayoutConstraint.deactivate(signinView.constraints)
+        declineButton = UIButton()
+        acceptButton = UIButton()
+        
+        declineButton.clipsToBounds = true
+        declineButton.translatesAutoresizingMaskIntoConstraints = false
+
+        acceptButton.clipsToBounds = true
+        acceptButton.translatesAutoresizingMaskIntoConstraints = false
+//        buttonView.addSubview(signInButton)
+        container.addSubview(declineButton)
+        container.addSubview(acceptButton)
+        
+        acceptButton.setTitle("Accept", for: .normal)
+        acceptButton.setTitleColor(UIColor.blue, for: .normal)
+        acceptButton.addTarget(self, action: #selector(self.submit), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
+        acceptButton.backgroundColor = UIColor.white
+        acceptButton.layer.cornerRadius = 5
+        acceptButton.layer.borderWidth = 1
+        acceptButton.layer.borderColor = UIColor.black.cgColor
+        
+        declineButton.setTitle("Decline", for: .normal)
+        declineButton.setTitleColor(UIColor.blue, for: .normal)
+        declineButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
+        declineButton.addTarget(self, action: #selector(self.touchUp), for: .touchUpInside)
+        declineButton.backgroundColor = UIColor.white
+        declineButton.layer.cornerRadius = 5
+        declineButton.layer.borderWidth = 1
+        declineButton.layer.borderColor = UIColor.black.cgColor
+
+        NSLayoutConstraint.activate([
+            
+            declineButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: -80),
+            declineButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 150),
+            acceptButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 80),
+            acceptButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 150),
+        ])
+        NSLayoutConstraint.activate([
+
+            legalView.heightAnchor.constraint(equalTo: container.heightAnchor),
+            legalView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            legalView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
+            legalView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
          ])
         view.updateConstraints()
     }
@@ -84,7 +162,16 @@ class ViewController: UIViewController
         
         configureTextFields()
 
-    
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = Auth.auth().currentUser {
+                self.signinView.removeFromSuperview()
+                NSLayoutConstraint.deactivate(self.signinView.constraints)
+                self.legalView = LegalView()
+                self.legalView.translatesAutoresizingMaskIntoConstraints = false
+                self.container.addSubview(self.legalView)
+                self.legalConstraints()
+            }
+        }
         
     }
     

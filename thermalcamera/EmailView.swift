@@ -15,7 +15,6 @@ class EmailView : UIView {
     var passwordField : UITextField!
     var passRepeatField : UITextField!
     @IBOutlet var submitButton : UIButton!
-    var isPasswordValid = false
     
     @objc func submit(sender: UIButton!) {
         print("hi")
@@ -28,7 +27,7 @@ class EmailView : UIView {
             "marketing": true,
             "source": "ios"
             ] as [String : Any]
-        Alamofire.request("http://localhost:5150/v1/user",
+        Alamofire.request("https://gygb-backend-v1.herokuapp.com/v1/user",
                           method: .post,
                           parameters: parameters,
                           encoding: JSONEncoding.default,
@@ -68,9 +67,9 @@ class EmailView : UIView {
         passRepeatField.layer.borderWidth = 1
         passRepeatField.layer.borderColor = UIColor.black.cgColor
         passRepeatField.placeholder = "Confirm password"
+    
         
-        
-        
+
         
         submitButton = UIButton()
         submitButton.clipsToBounds = true
