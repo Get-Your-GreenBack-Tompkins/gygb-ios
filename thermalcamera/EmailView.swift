@@ -9,30 +9,39 @@ import Firebase
 import GoogleSignIn
 import Alamofire
 
+protocol CustomViewProtocol : NSObjectProtocol{
+    func buttonTapped()
+}
+
 class EmailView : UIView {
     
     var emailField : UITextField!
     var passwordField : UITextField!
     var passRepeatField : UITextField!
+    weak var delegate : CustomViewProtocol? = nil
     @IBOutlet var submitButton : UIButton!
     
+    
+    
     @objc func submit(sender: UIButton!) {
-        print("hi")
         submitButton.setTitleColor(UIColor.blue, for: .normal)
-        let emailResult = emailField.text
-        let passwordResult = passwordField.text
-        let parameters = [
-            "email": emailResult,
-            "password": passwordResult,
-            "marketing": true,
-            "source": "ios"
-            ] as [String : Any]
-        Alamofire.request("https://gygb-backend-v1.herokuapp.com/v1/user",
-                          method: .post,
-                          parameters: parameters,
-                          encoding: JSONEncoding.default,
-                          headers: ["Content-Type": "application/json"])
+        self.delegate?.buttonTapped()
+//        let emailResult = emailField.text
+//        let passwordResult = passwordField.text
+//        let parameters = [
+//            "email": emailResult,
+//            "password": passwordResult,
+//            "marketing": true,
+//            "source": "ios"
+//            ] as [String : Any]
+//        AF.request("https://gygb-backend-v1.herokuapp.com/v1/user",
+//                          method: .post,
+//                          parameters: parameters,
+//                          encoding: JSONEncoding.default,
+//                          headers: ["Content-Type": "application/json"])
     }
+    
+    
     
     @objc func touchDown(sender: UIButton!) {
         sender.setTitleColor(UIColor.green, for: .normal)
@@ -112,6 +121,9 @@ class EmailView : UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+
     
  
 }

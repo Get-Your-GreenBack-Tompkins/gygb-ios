@@ -22,16 +22,16 @@ class ViewController: UIViewController
     var acceptButton : UIButton!
     var isPasswordValid = false
 
+    
+
+
     @objc func submit(sender: UIButton!) {
-        print("hi")
-        sender.setTitleColor(UIColor.blue, for: .normal)
-        self.legalView.removeFromSuperview()
-        self.acceptButton.removeFromSuperview()
-        self.declineButton.removeFromSuperview()
-        self.emailView = EmailView()
-        self.emailView.translatesAutoresizingMaskIntoConstraints = false
-        self.container.addSubview(self.emailView)
-        self.emailConstraints()
+        
+       sender.setTitleColor(UIColor.blue, for: .normal)
+       print("submit")
+       let dashboardViewController = DashboardViewController()
+       present(dashboardViewController, animated: true, completion: nil)
+        
     }
     
     
@@ -81,7 +81,7 @@ class ViewController: UIViewController
     }
     
     func legalConstraints() {
-        NSLayoutConstraint.deactivate(signinView.constraints)
+        NSLayoutConstraint.deactivate(emailView.constraints)
         declineButton = UIButton()
         acceptButton = UIButton()
         
@@ -147,37 +147,44 @@ class ViewController: UIViewController
         
         //container.addSubview(signinView)
         //view.addSubview(container)
+        //nav bar
         
+
+
         
-        //signinConstraints()
         
         
         emailView = EmailView()
+        
+        //signinConstraints()
+        
         emailView.translatesAutoresizingMaskIntoConstraints = false
+        
+        emailView.delegate = self 
         
         container.addSubview(emailView)
         view.addSubview(container)
         
         emailConstraints()
+
         
         configureTextFields()
+        
+        
+//         Auth.auth().createUser(withEmail: "ijc22@cornell.edu", password: "Cornell2020") { authResult, error in
+//           // ...
+//         }
 
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = Auth.auth().currentUser {
-                self.signinView.removeFromSuperview()
-                NSLayoutConstraint.deactivate(self.signinView.constraints)
-                self.legalView = LegalView()
-                self.legalView.translatesAutoresizingMaskIntoConstraints = false
-                self.container.addSubview(self.legalView)
-                self.legalConstraints()
-            }
-        }
         
     }
     
     func configureTextFields(){
         emailView.emailField.delegate = self;
         emailView.passwordField.delegate = self;
+    }
+    
+    @objc func btn_clicked(_ sender: UIBarButtonItem) {
+        // Do something
     }
     
     
@@ -265,6 +272,32 @@ extension ViewController: UITextFieldDelegate {
             validateEmail(email: textField.text)
         } else {
             validatePassword(password: textField.text)
+        }
+    }
+}
+
+
+
+extension ViewController : CustomViewProtocol {
+    func buttonTapped() {
+        Auth.auth().signIn(withEmail: emailView.emailField.text!, password: emailView.passwordField.text!) { (user, error) in
+           if error == nil{
+             print("hiw")
+             self.emailView.removeFromSuperview()
+             self.legalView = LegalView()
+             self.legalView.translatesAutoresizingMaskIntoConstraints = false
+             self.container.addSubview(self.legalView)
+             self.view.addSubview(self.container)
+             self.legalConstraints()
+            
+           }else{
+             print("hiw")
+             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            
+              alertController.addAction(defaultAction)
+              self.present(alertController, animated: true, completion: nil)
+                 }
         }
     }
 }
