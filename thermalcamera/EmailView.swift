@@ -21,8 +21,6 @@ class EmailView : UIView {
     weak var delegate : CustomViewProtocol? = nil
     @IBOutlet var submitButton : UIButton!
     
-    
-    
     @objc func submit(sender: UIButton!) {
         submitButton.setTitleColor(UIColor.blue, for: .normal)
         self.delegate?.buttonTapped()
