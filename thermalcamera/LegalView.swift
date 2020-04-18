@@ -11,6 +11,7 @@ class LegalView : UIView {
     var acceptButton : UIButton!
     var buttonView : UIView!
     var field : UITextView!
+    var titleField : UITextView!
     
     @objc func submit(sender: UIButton!) {
         print("hi")
@@ -52,14 +53,31 @@ class LegalView : UIView {
                      Suspendisse odio orci, aliquet ac neque at, pellentesque pharetra purus.
                      Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                      """
+        field.isScrollEnabled = true
+        field.isUserInteractionEnabled = true
+        field.isEditable = false
+        field.font = .systemFont(ofSize: 25)
+
+        titleField = UITextView()
+        titleField.clipsToBounds = true
+        titleField.translatesAutoresizingMaskIntoConstraints = false
+        titleField.isEditable = false
+        titleField.font = UIFont.boldSystemFont(ofSize: 25)
+        titleField.text = "Terms of Service"
         
         addSubview(field)
+        addSubview(titleField)
         
         NSLayoutConstraint.activate([
-            field.widthAnchor.constraint(equalToConstant: 400),
-            field.heightAnchor.constraint(equalToConstant: 400),
+            field.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            field.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -300),
             field.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            field.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
+            field.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -25),
+            
+            titleField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            titleField.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -470),
+            titleField.heightAnchor.constraint(equalToConstant: 40),
+            titleField.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -420)
         ])
         updateConstraints()
     }

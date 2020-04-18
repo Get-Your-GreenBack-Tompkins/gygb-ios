@@ -17,6 +17,7 @@
 		08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08D67CB623DFAD3000B92CB5 /* Assets.xcassets */; };
 		08D67CC523DFAD3000B92CB5 /* thermalcameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CC423DFAD3000B92CB5 /* thermalcameraTests.swift */; };
 		08D67CD023DFAD3000B92CB5 /* thermalcameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */; };
+		20A1EB32244B8AEB00FC2B94 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20A1EB31244B8AEB00FC2B94 /* Default-568h@2x.png */; };
 		20F339C523E524F000765691 /* ThermalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C323E524F000765691 /* ThermalSDK.framework */; };
 		20F339C623E524F000765691 /* ThermalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C323E524F000765691 /* ThermalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20F339C723E524F000765691 /* MeterLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C423E524F000765691 /* MeterLink.framework */; };
@@ -77,6 +78,7 @@
 		08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermalcameraUITests.swift; sourceTree = "<group>"; };
 		08D67CD123DFAD3000B92CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thermalcamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		20A1EB31244B8AEB00FC2B94 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		20F339C323E524F000765691 /* ThermalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThermalSDK.framework; path = Frameworks/ThermalSDK.framework; sourceTree = "<group>"; };
 		20F339C423E524F000765691 /* MeterLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeterLink.framework; path = Frameworks/MeterLink.framework; sourceTree = "<group>"; };
 		5F7FCFAB7600864DC4B21B2F /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		08D67CA123DFAD2D00B92CB5 = {
 			isa = PBXGroup;
 			children = (
+				20A1EB31244B8AEB00FC2B94 /* Default-568h@2x.png */,
 				080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */,
 				08D67CAC23DFAD2D00B92CB5 /* thermalcamera */,
 				08D67CC323DFAD3000B92CB5 /* thermalcameraTests */,
@@ -317,6 +320,7 @@
 			files = (
 				08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */,
 				080CA94123F8FC0C00E4B056 /* GoogleService-Info.plist in Resources */,
+				20A1EB32244B8AEB00FC2B94 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +543,6 @@
 		08D67CD223DFAD3000B92CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -601,7 +604,6 @@
 		08D67CD323DFAD3000B92CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -662,7 +664,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WLCD63PZUT;
+				DEVELOPMENT_TEAM = 4WSRPTZX5J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thermalcamera",
@@ -675,7 +677,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tc.thermalcamera;
+				PRODUCT_BUNDLE_IDENTIFIER = tc.thermalcamera.evan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "thermalcamera/thermalcamera-Bridging-Header.h";
@@ -693,7 +695,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WLCD63PZUT;
+				DEVELOPMENT_TEAM = 4WSRPTZX5J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thermalcamera",
@@ -706,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tc.thermalcamera;
+				PRODUCT_BUNDLE_IDENTIFIER = tc.thermalcamera.evan.rel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "thermalcamera/thermalcamera-Bridging-Header.h";
@@ -719,7 +721,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = thermalcameraTests/Info.plist;
@@ -741,7 +742,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7ECAA676C45BA3E8CDC6323 /* Pods-thermalcameraTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = thermalcameraTests/Info.plist;
@@ -763,7 +763,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F7FCFAB7600864DC4B21B2F /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = thermalcameraUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,7 +782,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91280337CDE1912687A67AD9 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = thermalcameraUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

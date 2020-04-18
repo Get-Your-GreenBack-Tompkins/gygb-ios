@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import thermalcamera
+//@testable import thermalcamera
 
 class ThermalCameraTests: XCTestCase {
 
