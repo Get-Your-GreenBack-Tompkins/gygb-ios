@@ -20,19 +20,17 @@
 		20F339C623E524F000765691 /* ThermalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C323E524F000765691 /* ThermalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20F339C723E524F000765691 /* MeterLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C423E524F000765691 /* MeterLink.framework */; };
 		20F339C823E524F000765691 /* MeterLink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C423E524F000765691 /* MeterLink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DC3F7B8143B3E6CFC56ABF0 /* Pods_thermalcameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0115FBCA16DBDAD68FAE9D /* Pods_thermalcameraTests.framework */; };
-		6FC9D7619BCC833BD0E68C50 /* Pods_thermalcamera_thermalcameraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA296165BA5E37CEE7D69EE5 /* Pods_thermalcamera_thermalcameraUITests.framework */; };
-		8254B6178BE5B21B4A11088B /* Pods_thermalcamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8CF0D3A58B5AE975066004 /* Pods_thermalcamera.framework */; };
+		490B866B45F06A46F309D087 /* Pods_thermalcamera_thermalcameraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E082BF42FE996DAFFBCC030E /* Pods_thermalcamera_thermalcameraUITests.framework */; };
+		9F07E56AC845BFEB21D4BD00 /* Pods_thermalcameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A6A454146E2D2B61E7C601 /* Pods_thermalcameraTests.framework */; };
+		DE5E54D4E2791876F2D5A3C7 /* Pods_thermalcamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0D1A1DF9B2FD98843A0D0 /* Pods_thermalcamera.framework */; };
 		EF02A7402448D78600C0F9EA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */; };
 		EF02A7412448D78600C0F9EA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */; };
 		EF02A7422448D78600C0F9EA /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */; };
-		EF2D5EB62448C67500BC00FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB52448C67500BC00FE /* Info.plist */; };
 		EF2D5EB72448C67500BC00FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB52448C67500BC00FE /* Info.plist */; };
 		EF2D5EB82448C67500BC00FE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB52448C67500BC00FE /* Info.plist */; };
 		EF2D5EBA2448C6A000BC00FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */; };
 		EF2D5EBB2448C6A000BC00FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */; };
 		EF2D5EBC2448C6A000BC00FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */; };
-		EF7DCDD82445417C00D45829 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DCDD72445417C00D45829 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0013C374A2E8B34013846DC0 /* Pods-thermalcamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera/Pods-thermalcamera.debug.xcconfig"; sourceTree = "<group>"; };
 		080CA94223F9EF9400E4B056 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
@@ -84,20 +82,19 @@
 		08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermalcameraUITests.swift; sourceTree = "<group>"; };
 		08D67CD123DFAD3000B92CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thermalcamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		143B1C3DE768C53F98101FE1 /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		20F339C323E524F000765691 /* ThermalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThermalSDK.framework; path = Frameworks/ThermalSDK.framework; sourceTree = "<group>"; };
 		20F339C423E524F000765691 /* MeterLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MeterLink.framework; path = Frameworks/MeterLink.framework; sourceTree = "<group>"; };
-		5F7FCFAB7600864DC4B21B2F /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		91280337CDE1912687A67AD9 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera-thermalcameraUITests.release.xcconfig"; path = "Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A7F5D985DA5E64955BEE2719 /* Pods-thermalcamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera.release.xcconfig"; path = "Target Support Files/Pods-thermalcamera/Pods-thermalcamera.release.xcconfig"; sourceTree = "<group>"; };
-		AA296165BA5E37CEE7D69EE5 /* Pods_thermalcamera_thermalcameraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcamera_thermalcameraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB0115FBCA16DBDAD68FAE9D /* Pods_thermalcameraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcameraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB8CF0D3A58B5AE975066004 /* Pods_thermalcamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7ECAA676C45BA3E8CDC6323 /* Pods-thermalcameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.release.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.release.xcconfig"; sourceTree = "<group>"; };
+		241C8C1BD9872944DA11FA27 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera-thermalcameraUITests.release.xcconfig"; path = "Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		61A0D1A1DF9B2FD98843A0D0 /* Pods_thermalcamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A6A454146E2D2B61E7C601 /* Pods_thermalcameraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcameraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89478C5EFC84EC9721E2F49F /* Pods-thermalcameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E082BF42FE996DAFFBCC030E /* Pods_thermalcamera_thermalcameraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thermalcamera_thermalcameraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		EF2D5EB52448C67500BC00FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EF7DCDD72445417C00D45829 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		F92B588308F215C4178B1CDB /* Pods-thermalcamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera/Pods-thermalcamera.debug.xcconfig"; sourceTree = "<group>"; };
+		F42BE23D0888042FBB231FC6 /* Pods-thermalcamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera.release.xcconfig"; path = "Target Support Files/Pods-thermalcamera/Pods-thermalcamera.release.xcconfig"; sourceTree = "<group>"; };
+		FA6A872743DBF134D34B0E1D /* Pods-thermalcameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.release.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +104,7 @@
 			files = (
 				20F339C723E524F000765691 /* MeterLink.framework in Frameworks */,
 				20F339C523E524F000765691 /* ThermalSDK.framework in Frameworks */,
-				8254B6178BE5B21B4A11088B /* Pods_thermalcamera.framework in Frameworks */,
+				DE5E54D4E2791876F2D5A3C7 /* Pods_thermalcamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DC3F7B8143B3E6CFC56ABF0 /* Pods_thermalcameraTests.framework in Frameworks */,
+				9F07E56AC845BFEB21D4BD00 /* Pods_thermalcameraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FC9D7619BCC833BD0E68C50 /* Pods_thermalcamera_thermalcameraUITests.framework in Frameworks */,
+				490B866B45F06A46F309D087 /* Pods_thermalcamera_thermalcameraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +159,6 @@
 				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
 				EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */,
 				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
-				EF7DCDD72445417C00D45829 /* LoginView.swift */,
 				EF2D5EB52448C67500BC00FE /* Info.plist */,
 				080CA94223F9EF9400E4B056 /* EmailView.swift */,
 				EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */,
@@ -194,9 +190,9 @@
 			children = (
 				20F339C423E524F000765691 /* MeterLink.framework */,
 				20F339C323E524F000765691 /* ThermalSDK.framework */,
-				CB8CF0D3A58B5AE975066004 /* Pods_thermalcamera.framework */,
-				AA296165BA5E37CEE7D69EE5 /* Pods_thermalcamera_thermalcameraUITests.framework */,
-				CB0115FBCA16DBDAD68FAE9D /* Pods_thermalcameraTests.framework */,
+				61A0D1A1DF9B2FD98843A0D0 /* Pods_thermalcamera.framework */,
+				E082BF42FE996DAFFBCC030E /* Pods_thermalcamera_thermalcameraUITests.framework */,
+				82A6A454146E2D2B61E7C601 /* Pods_thermalcameraTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,12 +200,12 @@
 		408F0F1F0ECAD3D1E922FBF3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F92B588308F215C4178B1CDB /* Pods-thermalcamera.debug.xcconfig */,
-				A7F5D985DA5E64955BEE2719 /* Pods-thermalcamera.release.xcconfig */,
-				5F7FCFAB7600864DC4B21B2F /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */,
-				91280337CDE1912687A67AD9 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */,
-				02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */,
-				E7ECAA676C45BA3E8CDC6323 /* Pods-thermalcameraTests.release.xcconfig */,
+				0013C374A2E8B34013846DC0 /* Pods-thermalcamera.debug.xcconfig */,
+				F42BE23D0888042FBB231FC6 /* Pods-thermalcamera.release.xcconfig */,
+				143B1C3DE768C53F98101FE1 /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */,
+				241C8C1BD9872944DA11FA27 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */,
+				89478C5EFC84EC9721E2F49F /* Pods-thermalcameraTests.debug.xcconfig */,
+				FA6A872743DBF134D34B0E1D /* Pods-thermalcameraTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -221,14 +217,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08D67CD423DFAD3000B92CB5 /* Build configuration list for PBXNativeTarget "thermalcamera" */;
 			buildPhases = (
-				B70B9A78C7085F4F623D5E98 /* [CP] Check Pods Manifest.lock */,
+				E6DA2C52A710B959D7427D63 /* [CP] Check Pods Manifest.lock */,
 				08D67CA623DFAD2D00B92CB5 /* Sources */,
 				08D67CA723DFAD2D00B92CB5 /* Frameworks */,
 				08D67CA823DFAD2D00B92CB5 /* Resources */,
 				20F339C223E522A000765691 /* ShellScript */,
 				20F339C923E524F000765691 /* Embed Frameworks */,
-				B854734017E6515E0F48BDEA /* [CP] Embed Pods Frameworks */,
-				20C8DDCA17EC21441DE99B6B /* [CP] Copy Pods Resources */,
+				70C26E697E801BDBA800FC2D /* [CP] Embed Pods Frameworks */,
+				C8E4E162206CBDDEBF3F518C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,7 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08D67CD723DFAD3000B92CB5 /* Build configuration list for PBXNativeTarget "thermalcameraTests" */;
 			buildPhases = (
-				FBD72B1960342BF12D666EEF /* [CP] Check Pods Manifest.lock */,
+				B7A9C407D71BE85722E428C6 /* [CP] Check Pods Manifest.lock */,
 				08D67CBC23DFAD3000B92CB5 /* Sources */,
 				08D67CBD23DFAD3000B92CB5 /* Frameworks */,
 				08D67CBE23DFAD3000B92CB5 /* Resources */,
@@ -262,12 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08D67CDA23DFAD3000B92CB5 /* Build configuration list for PBXNativeTarget "thermalcameraUITests" */;
 			buildPhases = (
-				603DB0FB7CD121C2D1DCD336 /* [CP] Check Pods Manifest.lock */,
+				5EA40B4F054721308D197899 /* [CP] Check Pods Manifest.lock */,
 				08D67CC723DFAD3000B92CB5 /* Sources */,
 				08D67CC823DFAD3000B92CB5 /* Frameworks */,
 				08D67CC923DFAD3000B92CB5 /* Resources */,
-				DE55F802B9EEFDB261D453AA /* [CP] Embed Pods Frameworks */,
-				90FAF8299922E10CAC924112 /* [CP] Copy Pods Resources */,
+				C552BCCD9A6916DD57D04B51 /* [CP] Embed Pods Frameworks */,
+				68481BA4E38D6F8CF951EBCE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,7 +324,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2D5EB62448C67500BC00FE /* Info.plist in Resources */,
 				08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */,
 				EF2D5EBA2448C6A000BC00FE /* GoogleService-Info.plist in Resources */,
 			);
@@ -355,23 +350,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20C8DDCA17EC21441DE99B6B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		20F339C223E522A000765691 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,7 +367,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo -e \"\\033[0;31mwarning:\\033[0m SwiftLint not installed. Install with \\033[0;32mmint install realm/SwiftLint\\033[0m.\\nGet mint at https://github.com/yonaskolb/mint#homebrew...\"\nfi\n";
 		};
-		603DB0FB7CD121C2D1DCD336 /* [CP] Check Pods Manifest.lock */ = {
+		5EA40B4F054721308D197899 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -411,7 +389,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		90FAF8299922E10CAC924112 /* [CP] Copy Pods Resources */ = {
+		68481BA4E38D6F8CF951EBCE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,29 +406,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B70B9A78C7085F4F623D5E98 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-thermalcamera-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B854734017E6515E0F48BDEA /* [CP] Embed Pods Frameworks */ = {
+		70C26E697E801BDBA800FC2D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,24 +423,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE55F802B9EEFDB261D453AA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBD72B1960342BF12D666EEF /* [CP] Check Pods Manifest.lock */ = {
+		B7A9C407D71BE85722E428C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,6 +445,62 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C552BCCD9A6916DD57D04B51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera-thermalcameraUITests/Pods-thermalcamera-thermalcameraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E4E162206CBDDEBF3F518C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-thermalcamera/Pods-thermalcamera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6DA2C52A710B959D7427D63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-thermalcamera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -514,7 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */,
-				EF7DCDD82445417C00D45829 /* LoginView.swift in Sources */,
 				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
@@ -678,7 +672,7 @@
 		};
 		08D67CD523DFAD3000B92CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F92B588308F215C4178B1CDB /* Pods-thermalcamera.debug.xcconfig */;
+			baseConfigurationReference = 0013C374A2E8B34013846DC0 /* Pods-thermalcamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -709,7 +703,7 @@
 		};
 		08D67CD623DFAD3000B92CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7F5D985DA5E64955BEE2719 /* Pods-thermalcamera.release.xcconfig */;
+			baseConfigurationReference = F42BE23D0888042FBB231FC6 /* Pods-thermalcamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -739,7 +733,7 @@
 		};
 		08D67CD823DFAD3000B92CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */;
+			baseConfigurationReference = 89478C5EFC84EC9721E2F49F /* Pods-thermalcameraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -761,7 +755,7 @@
 		};
 		08D67CD923DFAD3000B92CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7ECAA676C45BA3E8CDC6323 /* Pods-thermalcameraTests.release.xcconfig */;
+			baseConfigurationReference = FA6A872743DBF134D34B0E1D /* Pods-thermalcameraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -783,7 +777,7 @@
 		};
 		08D67CDB23DFAD3000B92CB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F7FCFAB7600864DC4B21B2F /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */;
+			baseConfigurationReference = 143B1C3DE768C53F98101FE1 /* Pods-thermalcamera-thermalcameraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -803,7 +797,7 @@
 		};
 		08D67CDC23DFAD3000B92CB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91280337CDE1912687A67AD9 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */;
+			baseConfigurationReference = 241C8C1BD9872944DA11FA27 /* Pods-thermalcamera-thermalcameraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -11,7 +11,7 @@ import UIKit
 class DashboardViewController: UITableViewController {
     var container : UIView!
     let cellId = "cellId"
-    let actions = ["Thermal Camera", "View and Share Pictures"]
+    let actions = ["Thermal Camera", "Thermal Camera", "View and Share Pictures"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class DashboardViewController: UITableViewController {
         navigationBar.items = [navigationItem]
 
         // Make the navigation bar a subview of the current view controller
-        container.addSubview(navigationBar)
+        self.view.addSubview(navigationBar)
         setupTableView()
     }
 
@@ -48,7 +48,7 @@ class DashboardViewController: UITableViewController {
      
      
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 2
+      return 3
      }
      
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

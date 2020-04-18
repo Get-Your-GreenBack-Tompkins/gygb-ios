@@ -10,6 +10,8 @@ target 'thermalcamera' do
   pod 'GoogleSignIn'
   pod 'Alamofire'
   pod 'FirebaseUI'
+  pod 'Firebase/Core'
+  pod 'Firebase'
   
   target 'thermalcameraTests' do
     inherit! :search_paths

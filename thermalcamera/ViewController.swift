@@ -81,53 +81,64 @@ class ViewController: UIViewController
     }
     
     func legalConstraints() {
-        NSLayoutConstraint.deactivate(emailView.constraints)
-        declineButton = UIButton()
-        acceptButton = UIButton()
-        
-        declineButton.clipsToBounds = true
-        declineButton.translatesAutoresizingMaskIntoConstraints = false
-
-        acceptButton.clipsToBounds = true
-        acceptButton.translatesAutoresizingMaskIntoConstraints = false
-//        buttonView.addSubview(signInButton)
-        container.addSubview(declineButton)
-        container.addSubview(acceptButton)
-        
-        acceptButton.setTitle("Accept", for: .normal)
-        acceptButton.setTitleColor(UIColor.blue, for: .normal)
-        acceptButton.addTarget(self, action: #selector(self.submit), for: .touchUpInside)
-        acceptButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
-        acceptButton.backgroundColor = UIColor.white
-        acceptButton.layer.cornerRadius = 5
-        acceptButton.layer.borderWidth = 1
-        acceptButton.layer.borderColor = UIColor.black.cgColor
-        
-        declineButton.setTitle("Decline", for: .normal)
-        declineButton.setTitleColor(UIColor.blue, for: .normal)
-        declineButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
-        declineButton.addTarget(self, action: #selector(self.touchUp), for: .touchUpInside)
-        declineButton.backgroundColor = UIColor.white
-        declineButton.layer.cornerRadius = 5
-        declineButton.layer.borderWidth = 1
-        declineButton.layer.borderColor = UIColor.black.cgColor
-
-        NSLayoutConstraint.activate([
+            NSLayoutConstraint.deactivate(emailView.constraints)
+            declineButton = UIButton()
+            acceptButton = UIButton()
             
-            declineButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: -80),
-            declineButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 150),
-            acceptButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 80),
-            acceptButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 150),
-        ])
-        NSLayoutConstraint.activate([
+            declineButton.clipsToBounds = true
+            declineButton.translatesAutoresizingMaskIntoConstraints = false
 
-            legalView.heightAnchor.constraint(equalTo: container.heightAnchor),
-            legalView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            legalView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
-            legalView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-         ])
-        view.updateConstraints()
-    }
+            acceptButton.clipsToBounds = true
+            acceptButton.translatesAutoresizingMaskIntoConstraints = false
+    //        buttonView.addSubview(signInButton)
+            container.addSubview(declineButton)
+            container.addSubview(acceptButton)
+            
+            acceptButton.setTitle("Accept", for: .normal)
+            acceptButton.setTitleColor(UIColor.blue, for: .normal)
+            acceptButton.addTarget(self, action: #selector(self.submit), for: .touchUpInside)
+            acceptButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
+            acceptButton.backgroundColor = UIColor.white
+            acceptButton.layer.cornerRadius = 5
+            acceptButton.layer.borderWidth = 1
+            acceptButton.layer.borderColor = UIColor.black.cgColor
+            acceptButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
+            acceptButton.setTitleColor(UIColor.white, for: .normal)
+            let acceptWidthConstraint = NSLayoutConstraint(item: acceptButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130)
+            let acceptHeightConstraint = NSLayoutConstraint(item: acceptButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60)
+            
+            declineButton.setTitle("Decline", for: .normal)
+            declineButton.setTitleColor(UIColor.blue, for: .normal)
+            declineButton.addTarget(self, action: #selector(self.touchDown), for: .touchDown)
+            declineButton.addTarget(self, action: #selector(self.touchUp), for: .touchUpInside)
+            declineButton.backgroundColor = UIColor.white
+            declineButton.layer.cornerRadius = 5
+            declineButton.layer.borderWidth = 1
+            declineButton.layer.borderColor = UIColor.black.cgColor
+            declineButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
+            declineButton.setTitleColor(UIColor.white, for: .normal)
+            let declineWidthConstraint = NSLayoutConstraint(item: declineButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130)
+            let declineHeightConstraint = NSLayoutConstraint(item: declineButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 60)
+                
+            NSLayoutConstraint.activate([
+                acceptWidthConstraint,
+                declineWidthConstraint,
+                acceptHeightConstraint,
+                declineHeightConstraint,
+                declineButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: -80),
+                declineButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 400),
+                acceptButton.centerXAnchor.constraint(equalTo: container.centerXAnchor, constant: 80),
+                acceptButton.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: 400),
+            ])
+            NSLayoutConstraint.activate([
+
+                legalView.heightAnchor.constraint(equalTo: container.heightAnchor),
+                legalView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+                legalView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
+                legalView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+             ])
+            view.updateConstraints()
+        }
     
     override func viewDidLoad() {
         
