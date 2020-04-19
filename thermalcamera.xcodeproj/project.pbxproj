@@ -16,11 +16,12 @@
 		08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08D67CB623DFAD3000B92CB5 /* Assets.xcassets */; };
 		08D67CC523DFAD3000B92CB5 /* thermalcameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CC423DFAD3000B92CB5 /* thermalcameraTests.swift */; };
 		08D67CD023DFAD3000B92CB5 /* thermalcameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */; };
+		206949AD244CA99200040DF3 /* ThermalCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206949AC244CA99200040DF3 /* ThermalCameraView.swift */; };
 		20908269244BFE4200AABF56 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20908268244BFE4200AABF56 /* UIFramework.framework */; };
 		2090826A244BFE4200AABF56 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20908268244BFE4200AABF56 /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20CD9790244BA0AA000213BF /* validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9788244BA0AA000213BF /* validation.swift */; };
 		20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9789244BA0AA000213BF /* DashboardViewController.swift */; };
-		20CD9798244BA290000213BF /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9797244BA290000213BF /* SelectionView.swift */; };
+		20CD9798244BA290000213BF /* BoothSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9797244BA290000213BF /* BoothSelectionView.swift */; };
 		20CD979A244BB302000213BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20CD9799244BB302000213BF /* Default-568h@2x.png */; };
 		20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97DF244BE076000213BF /* FirebaseSession.swift */; };
 		20CD97E2244BE28E000213BF /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97E1244BE28E000213BF /* FirebaseUser.swift */; };
@@ -86,11 +87,12 @@
 		08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thermalcameraUITests.swift; sourceTree = "<group>"; };
 		08D67CD123DFAD3000B92CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thermalcamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		206949AC244CA99200040DF3 /* ThermalCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalCameraView.swift; sourceTree = "<group>"; };
 		20908254244BFCDD00AABF56 /* BoothUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = BoothUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20908268244BFE4200AABF56 /* UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CD9788244BA0AA000213BF /* validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = validation.swift; sourceTree = "<group>"; };
 		20CD9789244BA0AA000213BF /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		20CD9797244BA290000213BF /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		20CD9797244BA290000213BF /* BoothSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoothSelectionView.swift; sourceTree = "<group>"; };
 		20CD9799244BB302000213BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		20CD97DF244BE076000213BF /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		20CD97E1244BE28E000213BF /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
@@ -168,21 +170,22 @@
 		08D67CAC23DFAD2D00B92CB5 /* thermalcamera */ = {
 			isa = PBXGroup;
 			children = (
-				20CD97E5244BF991000213BF /* EmailView.swift */,
-				20CD9789244BA0AA000213BF /* DashboardViewController.swift */,
-				20CD9788244BA0AA000213BF /* validation.swift */,
 				08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */,
-				08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */,
-				08D67CB123DFAD2D00B92CB5 /* ViewController.swift */,
 				08D67CB623DFAD3000B92CB5 /* Assets.xcassets */,
-				08D67CBB23DFAD3000B92CB5 /* Info.plist */,
-				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
-				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
 				20CD97E3244BE316000213BF /* BoothNavigationView.swift */,
-				087869CF240DDED90057133B /* LegalView.swift */,
-				20CD9797244BA290000213BF /* SelectionView.swift */,
+				20CD9797244BA290000213BF /* BoothSelectionView.swift */,
+				20CD9789244BA0AA000213BF /* DashboardViewController.swift */,
+				20CD97E5244BF991000213BF /* EmailView.swift */,
 				20CD97DF244BE076000213BF /* FirebaseSession.swift */,
 				20CD97E1244BE28E000213BF /* FirebaseUser.swift */,
+				08D67CBB23DFAD3000B92CB5 /* Info.plist */,
+				087869CF240DDED90057133B /* LegalView.swift */,
+				08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */,
+				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
+				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
+				206949AC244CA99200040DF3 /* ThermalCameraView.swift */,
+				20CD9788244BA0AA000213BF /* validation.swift */,
+				08D67CB123DFAD2D00B92CB5 /* ViewController.swift */,
 			);
 			path = thermalcamera;
 			sourceTree = "<group>";
@@ -535,8 +538,9 @@
 				20CD9790244BA0AA000213BF /* validation.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
 				20CD97E6244BF991000213BF /* EmailView.swift in Sources */,
-				20CD9798244BA290000213BF /* SelectionView.swift in Sources */,
+				20CD9798244BA290000213BF /* BoothSelectionView.swift in Sources */,
 				087869D0240DDED90057133B /* LegalView.swift in Sources */,
+				206949AD244CA99200040DF3 /* ThermalCameraView.swift in Sources */,
 				20CD97E4244BE316000213BF /* BoothNavigationView.swift in Sources */,
 				20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */,
 				20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */,

@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 public struct BoothPrimaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -17,6 +16,11 @@ public struct BoothPrimaryButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .background(Color(red: 144 / 255.0, green: 205 / 255.0, blue: 78 / 255.0))
             .cornerRadius(50)
+            .shadow(color: Color(
+                red: 0,
+                green: 0,
+                blue: 0
+            ).opacity(0.5), radius: 4, x: 0, y: 4)
     }
 }
 
@@ -28,19 +32,22 @@ public struct BoothSecondaryButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .background(Color(red: 127 / 255.0, green: 127 / 255.0, blue: 127 / 255.0))
             .cornerRadius(50)
+            .shadow(color: Color(
+                red: 0,
+                green: 0,
+                blue: 0
+            ).opacity(0.25), radius: 4, x: 0, y: 4)
     }
 }
 
 struct Buttons_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            Button(action: {}) {
-                Text("Primary Style")
-            }.buttonStyle(BoothPrimaryButtonStyle())
-        
-            Button(action: {}) {
-                Text("Secondary Style")
-            }.buttonStyle(BoothSecondaryButtonStyle())
+            Button(action: {}, label: { Text("Primary Style") })
+                .buttonStyle(BoothPrimaryButtonStyle())
+
+            Button(action: {}, label: { Text("Secondary Style") })
+                .buttonStyle(BoothSecondaryButtonStyle())
         }
     }
 }

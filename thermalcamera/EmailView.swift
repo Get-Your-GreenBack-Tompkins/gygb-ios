@@ -55,7 +55,7 @@ class EmailView: UIView {
 
             submitButton.widthAnchor.constraint(equalToConstant: 100),
             submitButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            submitButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 30),
+            submitButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 30)
         ])
 
         updateConstraints()

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct BoothNavigationView: View {
     @EnvironmentObject var session: FirebaseSession
-    
+
     @State var accepted: Bool = false
 
     func accept() {
@@ -26,7 +26,7 @@ struct BoothNavigationView: View {
     var body: some View {
         Group {
             if session.user != nil {
-                if (accepted) {
+                if accepted {
                     BoothSelectionView()
                 } else {
                     LegalViewRepresentable(accept: accept, decline: decline)

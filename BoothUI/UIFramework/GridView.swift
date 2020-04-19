@@ -19,7 +19,7 @@ extension Array {
 struct BoothAddItemBackgroundStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .frame(minWidth: 0, maxWidth: .infinity)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .padding()
             .foregroundColor(
                 Color(red: 127 / 255.0, green: 127 / 255.0, blue: 127 / 255.0)
@@ -28,7 +28,7 @@ struct BoothAddItemBackgroundStyle: ButtonStyle {
                 Color(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0)
             )
             .cornerRadius(50)
-            .padding(.horizontal, 30)
+            .padding(.all, 30)
             .shadow(color: Color(
                 red: 0,
                 green: 0,
@@ -52,27 +52,24 @@ func calculateColumnWidth(totalWidth: CGFloat, minimumItemWidth: Int, columnCoun
 struct InternalGridView<Element>: View where Element: View {
     private let itemWidth: CGFloat
     private let rows: [[Int]]
-    private let itemCount: Int
     private let maxItemCount: Int
-    private let getItem: (Int) -> Element
     private let addItem: (Int) -> Void
     private let deleteItem: (Int) -> Void
     private let spacing: CGFloat
+    @Binding private var items: [Element]
 
-    init(itemWidth: CGFloat,
+    init(items: Binding<[Element]>,
+         itemWidth: CGFloat,
          spacing: CGFloat,
-         getItem: @escaping (Int) -> Element,
          addItem: @escaping (Int) -> Void,
          deleteItem: @escaping (Int) -> Void,
          rows: [[Int]],
-         itemCount: Int,
          maxItemCount: Int) {
+        _items = items
         self.itemWidth = itemWidth
-        self.getItem = getItem
         self.addItem = addItem
         self.spacing = spacing
         self.rows = rows
-        self.itemCount = itemCount
         self.maxItemCount = maxItemCount
         self.deleteItem = deleteItem
     }
@@ -80,7 +77,7 @@ struct InternalGridView<Element>: View where Element: View {
     func addButton(index: Int) -> some View {
         Button(action: {
             self.addItem(index)
-        }) {
+        }, label: {
             Image(systemName: "plus")
                 .font(.largeTitle)
                 .foregroundColor(
@@ -90,8 +87,9 @@ struct InternalGridView<Element>: View where Element: View {
                         blue: 127 / 255.0
                     )
                 )
-        }
-        .frame(width: itemWidth)
+        })
+        .padding()
+        .frame(width: itemWidth, height: itemWidth)
         .buttonStyle(BoothAddItemBackgroundStyle())
     }
 
@@ -99,15 +97,16 @@ struct InternalGridView<Element>: View where Element: View {
         HStack {
             ForEach(row, id: \.self) { item in
                 Group {
-                    if item >= self.itemCount {
-                        if item == self.itemCount {
+                    if item >= self.items.count {
+                        if item == self.items.count {
                             self.addButton(index: item - 1)
                         } else {
                             Text("This shouldn't happen!")
                         }
                     } else {
-                        self.getItem(item)
-                            .frame(width: self.itemWidth)
+                        self.items[item]
+                            .frame(width: self.itemWidth, height: self.itemWidth)
+                            .cornerRadius(40)
                             .onTapGesture(count: 1) {
                                 self.deleteItem(item)
                             }
@@ -128,31 +127,30 @@ struct InternalGridView<Element>: View where Element: View {
 
 public struct GridView<Element>: View where Element: View {
     private let rows: [[Int]]
-    private let getItem: (Int) -> Element
     private let addItem: (Int) -> Void
     private let deleteItem: (Int) -> Void
-    private let itemCount: Int
     private let maxItemCount: Int
     private let spacing: CGFloat
+    @Binding private var items: [Element]
 
-    init(itemCount: Int, maxItemCount: Int, columnCount: Int,
-         spacing: Int, getItem: @escaping (Int) -> Element,
+    public init(items: Binding<[Element]>, maxItemCount: Int, columnCount: Int,
+         spacing: Int,
          addItem: @escaping (Int) -> Void,
          deleteItem: @escaping (Int) -> Void) {
+        _items = items
         self.maxItemCount = maxItemCount
-        self.itemCount = itemCount
-        self.getItem = getItem
         self.addItem = addItem
         self.deleteItem = deleteItem
         self.spacing = CGFloat(spacing)
 
-        let items = Array(0 ..< min(itemCount + 1, maxItemCount))
+        let items = Array(0 ..< min(items.wrappedValue.count + 1, maxItemCount))
         rows = items.chunked(into: columnCount)
     }
 
     public var body: some View {
         GeometryReader { geometry in
             InternalGridView(
+                items: self.$items,
                 itemWidth: calculateColumnWidth(
                     totalWidth: geometry.size.width,
                     minimumItemWidth: 32,
@@ -160,60 +158,11 @@ public struct GridView<Element>: View where Element: View {
                     spacing: self.spacing
                 ),
                 spacing: self.spacing,
-                getItem: self.getItem,
                 addItem: self.addItem,
                 deleteItem: self.deleteItem,
                 rows: self.rows,
-                itemCount: self.itemCount,
                 maxItemCount: self.maxItemCount
             )
         }
-    }
-}
-
-public struct BoothSelectionView: View {
-    static let bundle = Bundle(identifier: "org.getyourgreenbacktompkins.UIFramework")
-    @State var images: [Image] = []
-    @State var otherImages: [Image] = [
-        Image("ImageA", bundle: bundle),
-        Image("ImageB", bundle: bundle),
-        Image("ImageC", bundle: bundle),
-        Image("ImageD", bundle: bundle),
-    ]
-
-    public init() {}
-
-    public var body: some View {
-        GridView(itemCount: images.count, maxItemCount: 4, columnCount: 2,
-                 spacing: 20,
-                 getItem: { (ind: Int) -> Image in
-                     let image = self.images[ind]
-
-                     return image.resizable(resizingMode: Image.ResizingMode.stretch)
-                 },
-                 addItem: { _ in
-                     let image = self.otherImages.popLast()
-
-                     if let image = image {
-                         self.images.append(image)
-                     }
-                 },
-                 deleteItem: { itemIndex in
-                     let image = self.images.remove(at: itemIndex)
-
-                     self.otherImages.append(image)
-                 })
-    }
-}
-
-struct BoothSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        BoothSelectionView().frame(
-            minWidth: 0,
-            maxWidth: .infinity,
-            minHeight: 0,
-            maxHeight: .infinity,
-            alignment: Alignment.topLeading
-        )
     }
 }
