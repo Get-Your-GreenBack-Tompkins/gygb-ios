@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		04B54D94CF558C549283A219 /* libPods-BoothUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D371810EF810556997F22EBB /* libPods-BoothUI.a */; };
+		2069499F244C2BE300040DF3 /* CameraInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069499E244C2BE300040DF3 /* CameraInterface.swift */; };
+		206949A1244C2BFC00040DF3 /* PhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206949A0244C2BFC00040DF3 /* PhotoGallery.swift */; };
+		206949A3244C2C1F00040DF3 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206949A2244C2C1F00040DF3 /* GridView.swift */; };
+		206949A5244C2C3700040DF3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206949A4244C2C3700040DF3 /* Buttons.swift */; };
 		2090825F244BFE2700AABF56 /* UIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 2090825D244BFE2700AABF56 /* UIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20908262244BFE2700AABF56 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2090825B244BFE2700AABF56 /* UIFramework.framework */; };
 		20908263244BFE2700AABF56 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2090825B244BFE2700AABF56 /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -46,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2069499E244C2BE300040DF3 /* CameraInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInterface.swift; sourceTree = "<group>"; };
+		206949A0244C2BFC00040DF3 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
+		206949A2244C2C1F00040DF3 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		206949A4244C2C3700040DF3 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2090825B244BFE2700AABF56 /* UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2090825D244BFE2700AABF56 /* UIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFramework.h; sourceTree = "<group>"; };
 		2090825E244BFE2700AABF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 				2090825D244BFE2700AABF56 /* UIFramework.h */,
 				2090825E244BFE2700AABF56 /* Info.plist */,
 				2090826B244BFF0200AABF56 /* UIFramework.swift */,
+				2069499E244C2BE300040DF3 /* CameraInterface.swift */,
+				206949A0244C2BFC00040DF3 /* PhotoGallery.swift */,
+				206949A2244C2C1F00040DF3 /* GridView.swift */,
+				206949A4244C2C3700040DF3 /* Buttons.swift */,
 			);
 			path = UIFramework;
 			sourceTree = "<group>";
@@ -294,6 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206949A5244C2C3700040DF3 /* Buttons.swift in Sources */,
+				206949A1244C2BFC00040DF3 /* PhotoGallery.swift in Sources */,
+				2069499F244C2BE300040DF3 /* CameraInterface.swift in Sources */,
+				206949A3244C2C1F00040DF3 /* GridView.swift in Sources */,
 				2090826C244BFF0200AABF56 /* UIFramework.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
