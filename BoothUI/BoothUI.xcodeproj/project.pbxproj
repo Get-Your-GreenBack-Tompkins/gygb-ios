@@ -15,6 +15,7 @@
 		2090826C244BFF0200AABF56 /* UIFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090826B244BFF0200AABF56 /* UIFramework.swift */; };
 		2090826D244C013100AABF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CD97CF244BD6E7000213BF /* Assets.xcassets */; };
 		20FE4B92244CBDED00755DFF /* CaptureReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE4B91244CBDED00755DFF /* CaptureReviewView.swift */; };
+		20FE4B94244CDCE200755DFF /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE4B93244CDCE200755DFF /* SigninView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2090826B244BFF0200AABF56 /* UIFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFramework.swift; sourceTree = "<group>"; };
 		20CD97CF244BD6E7000213BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20FE4B91244CBDED00755DFF /* CaptureReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureReviewView.swift; sourceTree = "<group>"; };
+		20FE4B93244CDCE200755DFF /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		3C6ABEFE957FE847920B571A /* Pods-BoothUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoothUI.release.xcconfig"; path = "Target Support Files/Pods-BoothUI/Pods-BoothUI.release.xcconfig"; sourceTree = "<group>"; };
 		A7FCEF19BFB62ED9ED70A8E7 /* Pods-BoothUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoothUI.debug.xcconfig"; path = "Target Support Files/Pods-BoothUI/Pods-BoothUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D371810EF810556997F22EBB /* libPods-BoothUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoothUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,7 @@
 				206949A6244C946000040DF3 /* NativeCameraProvider.swift */,
 				206949A2244C2C1F00040DF3 /* GridView.swift */,
 				206949A4244C2C3700040DF3 /* Buttons.swift */,
+				20FE4B93244CDCE200755DFF /* SigninView.swift */,
 			);
 			path = UIFramework;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				206949A7244C946000040DF3 /* NativeCameraProvider.swift in Sources */,
 				2069499F244C2BE300040DF3 /* CameraInterface.swift in Sources */,
 				206949A3244C2C1F00040DF3 /* GridView.swift in Sources */,
+				20FE4B94244CDCE200755DFF /* SigninView.swift in Sources */,
 				2090826C244BFF0200AABF56 /* UIFramework.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

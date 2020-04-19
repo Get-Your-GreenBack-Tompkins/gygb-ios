@@ -1,5 +1,5 @@
 //
-//  EmailView.swift
+//  LegalView.swift
 //  thermalcamera
 //
 //  Created by Ashneel Das on 2/14/20.

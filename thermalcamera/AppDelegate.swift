@@ -7,31 +7,14 @@
 //
 
 import Firebase
-import GoogleSignIn
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    func sign(_: GIDSignIn!, didSignInFor _: GIDGoogleUser!, withError _: Error?) {
-        // ...
-    }
-
-    func sign(_: GIDSignIn!, didDisconnectWith _: GIDGoogleUser!, withError _: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-
+class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-
         return true
-    }
-
-    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
     }
 
     @available(iOS 13.0, *)

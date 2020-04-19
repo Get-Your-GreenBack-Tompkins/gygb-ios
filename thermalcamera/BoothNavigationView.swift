@@ -32,7 +32,7 @@ struct BoothNavigationView: View {
                     LegalViewRepresentable(accept: accept, decline: decline)
                 }
             } else {
-                SigninView()
+                FirebaseSigninView()
             }
         }.onAppear(perform: { () -> Void in
             self.session.listen()

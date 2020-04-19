@@ -1,16 +1,14 @@
 //
-//  EmailView.swift
+//  FirebaseSigninView.swift
 //  thermalcamera
 //
 //  Created by Ashneel Das on 2/14/20.
 //  Copyright © 2020 Get Your GreenBack Tompkins. All rights reserved.
 //
 import SwiftUI
+import UIFramework
 
-import Firebase
-import GoogleSignIn
-
-struct SigninView: View {
+struct FirebaseSigninView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var showAlert: Bool = false
@@ -33,16 +31,11 @@ struct SigninView: View {
     }
 
     var body: some View {
-        VStack {
-            TextField("Enter email here", text: $email).padding(.all, 5)
-            SecureField("Enter password", text: $password).padding(.all, 5)
-
-            Button(action: login) {
-                Text("Submit")
-            }.alert(isPresented: self.$showAlert, content: {
-                Alert(title: Text("Error"), message: Text(error?.localizedDescription ?? "Unknown error"),
-                                                          dismissButton: .default(Text("OK")))
-            })
+        SigninView(email: $email,
+                   password: $password,
+                   showAlert: $showAlert,
+                   error: $error) {
+            self.login()
         }
     }
 }

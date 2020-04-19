@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		080CA94123F8FC0C00E4B056 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */; };
 		087869D0240DDED90057133B /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087869CF240DDED90057133B /* LegalView.swift */; };
-		088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* SigninView.swift */; };
+		088D1DE223F7487D00BFD4D3 /* FirebaseSigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* FirebaseSigninView.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
 		08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */; };
 		08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CB123DFAD2D00B92CB5 /* ViewController.swift */; };
@@ -26,7 +26,6 @@
 		20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97DF244BE076000213BF /* FirebaseSession.swift */; };
 		20CD97E2244BE28E000213BF /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97E1244BE28E000213BF /* FirebaseUser.swift */; };
 		20CD97E4244BE316000213BF /* BoothNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97E3244BE316000213BF /* BoothNavigationView.swift */; };
-		20CD97E6244BF991000213BF /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97E5244BF991000213BF /* EmailView.swift */; };
 		20F339C523E524F000765691 /* ThermalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C323E524F000765691 /* ThermalSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		20F339C623E524F000765691 /* ThermalSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C323E524F000765691 /* ThermalSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20F339C723E524F000765691 /* MeterLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F339C423E524F000765691 /* MeterLink.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -73,7 +72,7 @@
 		02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "thermalcamera/Secrets/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
-		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		088D1DE123F7487D00BFD4D3 /* FirebaseSigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSigninView.swift; sourceTree = "<group>"; };
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 		20CD97DF244BE076000213BF /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		20CD97E1244BE28E000213BF /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		20CD97E3244BE316000213BF /* BoothNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoothNavigationView.swift; sourceTree = "<group>"; };
-		20CD97E5244BF991000213BF /* EmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		20CD97E7244BFB8F000213BF /* BoothUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = BoothUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CD97E9244BFB9B000213BF /* BoothUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = BoothUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F339C323E524F000765691 /* ThermalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThermalSDK.framework; path = Frameworks/ThermalSDK.framework; sourceTree = "<group>"; };
@@ -175,13 +173,12 @@
 				20CD97E3244BE316000213BF /* BoothNavigationView.swift */,
 				20CD9797244BA290000213BF /* BoothSelectionView.swift */,
 				20CD9789244BA0AA000213BF /* DashboardViewController.swift */,
-				20CD97E5244BF991000213BF /* EmailView.swift */,
 				20CD97DF244BE076000213BF /* FirebaseSession.swift */,
+				088D1DE123F7487D00BFD4D3 /* FirebaseSigninView.swift */,
 				20CD97E1244BE28E000213BF /* FirebaseUser.swift */,
 				08D67CBB23DFAD3000B92CB5 /* Info.plist */,
 				087869CF240DDED90057133B /* LegalView.swift */,
 				08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */,
-				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
 				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
 				206949AC244CA99200040DF3 /* ThermalCameraView.swift */,
 				20CD9788244BA0AA000213BF /* validation.swift */,
@@ -533,11 +530,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */,
-				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
+				088D1DE223F7487D00BFD4D3 /* FirebaseSigninView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
 				20CD9790244BA0AA000213BF /* validation.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
-				20CD97E6244BF991000213BF /* EmailView.swift in Sources */,
 				20CD9798244BA290000213BF /* BoothSelectionView.swift in Sources */,
 				087869D0240DDED90057133B /* LegalView.swift in Sources */,
 				206949AD244CA99200040DF3 /* ThermalCameraView.swift in Sources */,
