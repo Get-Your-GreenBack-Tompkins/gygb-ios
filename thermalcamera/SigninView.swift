@@ -2,40 +2,47 @@
 //  EmailView.swift
 //  thermalcamera
 //
-//  Created by Ashneel  Das on 2/14/20.
-//  Copyright © 2020 Ashneel  Das. All rights reserved.
+//  Created by Ashneel Das on 2/14/20.
+//  Copyright © 2020 Get Your GreenBack Tompkins. All rights reserved.
 //
+import SwiftUI
+
 import Firebase
 import GoogleSignIn
 
-class SigninView : UIView {
-    
-    var buttonView : UIView!
-    var signInButton : GIDSignInButton!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.clipsToBounds = true
-        
-//        buttonView = UIView()
-//        buttonView.translatesAutoresizingMaskIntoConstraints = false
-        
-        signInButton = GIDSignInButton()
-        signInButton.clipsToBounds = true
-        signInButton.translatesAutoresizingMaskIntoConstraints = false
+struct SigninView: View {
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var showAlert: Bool = false
+    @State var error: Error?
 
-//        buttonView.addSubview(signInButton)
-        addSubview(signInButton)
-        NSLayoutConstraint.activate([
-            
-            signInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            signInButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-        ])
-        
-        updateConstraints()
+    @EnvironmentObject var session: FirebaseSession
+
+    func login () {
+        session.signIn(email: email, password: password) { (_, error) in
+            if error != nil {
+                self.error = error
+                self.showAlert = true
+            } else {
+                self.showAlert = false
+                self.error = nil
+                self.email = ""
+                self.password = ""
+            }
+        }
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    var body: some View {
+        VStack {
+            TextField("Enter email here", text: $email).padding(.all, 5)
+            SecureField("Enter password", text: $password).padding(.all, 5)
+
+            Button(action: login) {
+                Text("Submit")
+            }.alert(isPresented: self.$showAlert, content: {
+                Alert(title: Text("Error"), message: Text(error?.localizedDescription ?? "Unknown error"),
+                                                          dismissButton: .default(Text("OK")))
+            })
+        }
     }
 }

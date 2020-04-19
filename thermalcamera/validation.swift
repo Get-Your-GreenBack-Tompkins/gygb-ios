@@ -3,37 +3,37 @@
 //  thermalcamera
 //
 //  Created by Imani Chilongani on 29/02/2020.
-//  Copyright © 2020 Ashneel  Das. All rights reserved.
+//  Copyright © 2020 Get Your GreenBack Tompkins. All rights reserved.
 //
 var txtPassword: UITextField!
 var lblPasswordValidation: UILabel!
 var isPasswordValid = true
 
-func textFieldDidChange(textField: UITextField) {
-    let attrStr = NSMutableAttributedString (
+func textFieldDidChange(textField _: UITextField) {
+    let attrStr = NSMutableAttributedString(
         string: "Password must be at least 8 characters, and contain at least one upper case letter, one lower case letter, and one number.",
         attributes: [
-            .font: UIFont.init(name: "Roboto", size: 11.0) ?? UIFont.systemFont(ofSize: 11.0),
-            .foregroundColor: UIColor(named: "6A6A6A")
-        ])
-    
+            .font: UIFont(name: "Roboto", size: 11.0) ?? UIFont.systemFont(ofSize: 11.0),
+            .foregroundColor: UIColor(named: "6A6A6A"),
+        ]
+    )
+
     if let txt = txtPassword.text {
-            isPasswordValid = true
-            attrStr.addAttributes(setupAttributeColor(if: (txt.count >= 8)),
-                                  range: findRange(in: attrStr.string, for: "at least 8 characters"))
-            attrStr.addAttributes(setupAttributeColor(if: (txt.rangeOfCharacter(from: CharacterSet.uppercaseLetters) != nil)),
-                                  range: findRange(in: attrStr.string, for: "one upper case letter"))
-            attrStr.addAttributes(setupAttributeColor(if: (txt.rangeOfCharacter(from: CharacterSet.lowercaseLetters) != nil)),
-                                  range: findRange(in: attrStr.string, for: "one lower case letter"))
-            attrStr.addAttributes(setupAttributeColor(if: (txt.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil)),
-                                  range: findRange(in: attrStr.string, for: "one number"))
-        } else {
-            isPasswordValid = false
-        }
-    
+        isPasswordValid = true
+        attrStr.addAttributes(setupAttributeColor(if: txt.count >= 8),
+                              range: findRange(in: attrStr.string, for: "at least 8 characters"))
+        attrStr.addAttributes(setupAttributeColor(if: txt.rangeOfCharacter(from: CharacterSet.uppercaseLetters) != nil),
+                              range: findRange(in: attrStr.string, for: "one upper case letter"))
+        attrStr.addAttributes(setupAttributeColor(if: txt.rangeOfCharacter(from: CharacterSet.lowercaseLetters) != nil),
+                              range: findRange(in: attrStr.string, for: "one lower case letter"))
+        attrStr.addAttributes(setupAttributeColor(if: txt.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil),
+                              range: findRange(in: attrStr.string, for: "one number"))
+    } else {
+        isPasswordValid = false
+    }
+
     lblPasswordValidation.attributedText = attrStr
 }
-
 
 func setupAttributeColor(if isValid: Bool) -> [NSAttributedString.Key: Any] {
     if isValid {
@@ -58,12 +58,12 @@ func findRange(in baseString: String, for substring: String) -> NSRange {
 func validateEmail(email: String?) -> String? {
     guard let trimmedText = email?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
     guard let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else { return nil }
-    
+
     let range = NSMakeRange(0, NSString(string: trimmedText).length)
     let allMatches = dataDetector.matches(in: trimmedText,
                                           options: [],
                                           range: range)
-    
+
     if allMatches.count == 1,
         allMatches.first?.url?.absoluteString.contains("mailto:") == true {
         return trimmedText
@@ -78,22 +78,22 @@ func validateEmail(email: String?) -> String? {
 
 func validatePassword(password: String?) -> String? {
     var errorMsg = "Password requires at least "
-    
+
     if let txt = txtPassword.text {
-        if (txt.rangeOfCharacter(from: CharacterSet.uppercaseLetters) == nil) {
+        if txt.rangeOfCharacter(from: CharacterSet.uppercaseLetters) == nil {
             errorMsg += "one upper case letter"
         }
-        if (txt.rangeOfCharacter(from: CharacterSet.lowercaseLetters) == nil) {
+        if txt.rangeOfCharacter(from: CharacterSet.lowercaseLetters) == nil {
             errorMsg += ", one lower case letter"
         }
-        if (txt.rangeOfCharacter(from: CharacterSet.decimalDigits) == nil) {
+        if txt.rangeOfCharacter(from: CharacterSet.decimalDigits) == nil {
             errorMsg += ", one number"
         }
         if txt.count < 8 {
             errorMsg += ", and eight characters"
         }
     }
-    
+
     if isPasswordValid {
         return password!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     } else {
