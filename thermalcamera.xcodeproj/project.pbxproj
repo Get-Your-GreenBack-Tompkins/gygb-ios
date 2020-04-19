@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		080CA94323F9EF9400E4B056 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080CA94223F9EF9400E4B056 /* EmailView.swift */; };
+		08201093244BA4780004500B /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08201092244BA4780004500B /* SubscribeView.swift */; };
+		08201097244BB0060004500B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08201096244BB0060004500B /* CameraViewController.swift */; };
 		087869D0240DDED90057133B /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087869CF240DDED90057133B /* LegalView.swift */; };
-		088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* SigninView.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
 		08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */; };
 		08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CB123DFAD2D00B92CB5 /* ViewController.swift */; };
@@ -68,8 +69,9 @@
 /* Begin PBXFileReference section */
 		0013C374A2E8B34013846DC0 /* Pods-thermalcamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcamera.debug.xcconfig"; path = "Target Support Files/Pods-thermalcamera/Pods-thermalcamera.debug.xcconfig"; sourceTree = "<group>"; };
 		080CA94223F9EF9400E4B056 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		08201092244BA4780004500B /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
+		08201096244BB0060004500B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
-		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,11 +160,12 @@
 				08D67CB623DFAD3000B92CB5 /* Assets.xcassets */,
 				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
 				EF2D5EB92448C6A000BC00FE /* GoogleService-Info.plist */,
-				088D1DE123F7487D00BFD4D3 /* SigninView.swift */,
 				EF2D5EB52448C67500BC00FE /* Info.plist */,
 				080CA94223F9EF9400E4B056 /* EmailView.swift */,
 				EF02A73F2448D78600C0F9EA /* DashboardViewController.swift */,
 				087869CF240DDED90057133B /* LegalView.swift */,
+				08201092244BA4780004500B /* SubscribeView.swift */,
+				08201096244BB0060004500B /* CameraViewController.swift */,
 			);
 			path = thermalcamera;
 			sourceTree = "<group>";
@@ -509,10 +512,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */,
-				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
+				08201093244BA4780004500B /* SubscribeView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
 				087869D0240DDED90057133B /* LegalView.swift in Sources */,
+				08201097244BB0060004500B /* CameraViewController.swift in Sources */,
 				080CA94323F9EF9400E4B056 /* EmailView.swift in Sources */,
 				EF02A7402448D78600C0F9EA /* DashboardViewController.swift in Sources */,
 			);

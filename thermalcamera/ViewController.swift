@@ -10,11 +10,16 @@ import UIKit
 import GoogleSignIn
 import Firebase
 
+protocol imageDelegate {
+    func addImage(image: UIImage)
+}
+
 class ViewController: UIViewController
 // FLIRDiscoveryEventDelegate, FLIRDataReceivedDelegate
 {
-
-    var signinView : SigninView!
+    
+    var images: [UIImage]!;
+    var subscribeView: SubscribeView!
     var emailView: EmailView!
     var legalView: LegalView!
     var container : UIView!
@@ -22,15 +27,23 @@ class ViewController: UIViewController
     var acceptButton : UIButton!
     var isPasswordValid = false
 
-    
-
-
     @objc func submit(sender: UIButton!) {
         
        sender.setTitleColor(UIColor.blue, for: .normal)
-       print("submit")
-       let dashboardViewController = DashboardViewController()
-       present(dashboardViewController, animated: true, completion: nil)
+       self.legalView.removeFromSuperview()
+       self.acceptButton.removeFromSuperview()
+       self.declineButton.removeFromSuperview()
+       NSLayoutConstraint.deactivate(emailView.constraints)
+       NSLayoutConstraint.deactivate(acceptButton.constraints)
+       NSLayoutConstraint.deactivate(declineButton.constraints)
+       let cameraViewController = CameraViewController()
+       present(cameraViewController, animated: true, completion: nil)
+
+//       self.subscribeView = SubscribeView()
+//       self.subscribeView.translatesAutoresizingMaskIntoConstraints = false
+//       self.subscribeView.addSubview(self.legalView)
+//       self.container.addSubview(subscribeView)
+//       self.subscribeConstraints()
         
     }
     
@@ -43,28 +56,20 @@ class ViewController: UIViewController
         sender.setTitleColor(UIColor.green, for: .normal)
     }
     
-    
-    func signinConstraints() {
+    func subscribeConstraints() {
+        NSLayoutConstraint.deactivate(emailView.constraints)
+        NSLayoutConstraint.deactivate(acceptButton.constraints)
+        NSLayoutConstraint.deactivate(declineButton.constraints)
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: view.topAnchor),
-            container.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            signinView.heightAnchor.constraint(equalTo: container.heightAnchor),
-            signinView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            signinView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
-            signinView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
-         ])
-        view.updateConstraints()
+            subscribeView.heightAnchor.constraint(equalTo: container.heightAnchor),
+            subscribeView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            subscribeView.widthAnchor.constraint(equalTo: container.readableContentGuide.widthAnchor),
+            subscribeView.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+        ])
     }
     
     func emailConstraints() {
-        
-       //NSLayoutConstraint.deactivate(signinView.constraints)
-        //NSLayoutConstraint.deactivate(legalView.constraints)
-        //NSLayoutConstraint.deactivate(acceptButton.constraints)
-        //NSLayoutConstraint.deactivate(declineButton.constraints)
         
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: view.topAnchor),
@@ -152,22 +157,9 @@ class ViewController: UIViewController
         container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
         container.backgroundColor = UIColor.white
-        
-        //signinView = SigninView()
-        //signinView.translatesAutoresizingMaskIntoConstraints = false
-        
-        //container.addSubview(signinView)
-        //view.addSubview(container)
-        //nav bar
-        
 
-
-        
-        
-        
         emailView = EmailView()
         
-        //signinConstraints()
         
         emailView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -293,7 +285,6 @@ extension ViewController : CustomViewProtocol {
     func buttonTapped() {
         Auth.auth().signIn(withEmail: emailView.emailField.text!, password: emailView.passwordField.text!) { (user, error) in
            if error == nil{
-             print("hiw")
              self.emailView.removeFromSuperview()
              self.legalView = LegalView()
              self.legalView.translatesAutoresizingMaskIntoConstraints = false
@@ -302,7 +293,6 @@ extension ViewController : CustomViewProtocol {
              self.legalConstraints()
             
            }else{
-             print("hiw")
              let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
              let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             
@@ -310,5 +300,11 @@ extension ViewController : CustomViewProtocol {
               self.present(alertController, animated: true, completion: nil)
                  }
         }
+    }
+}
+
+extension ViewController:imageDelegate {
+    func addImage(image: UIImage) {
+        images.append(image);
     }
 }
