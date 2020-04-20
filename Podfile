@@ -7,7 +7,7 @@ def shared_pods
   # No pods are currently shared.
 end
 
-target 'BoothUI' do
+target 'UIFramework' do
   project './BoothUI/BoothUI.xcodeproj'
   shared_pods
 end

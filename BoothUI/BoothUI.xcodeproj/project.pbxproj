@@ -15,6 +15,7 @@
 		2090826C244BFF0200AABF56 /* UIFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090826B244BFF0200AABF56 /* UIFramework.swift */; };
 		2090826D244C013100AABF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CD97CF244BD6E7000213BF /* Assets.xcassets */; };
 		20FE4B92244CBDED00755DFF /* CaptureReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE4B91244CBDED00755DFF /* CaptureReviewView.swift */; };
+		36FFCEF75D94C549C4F9ABA2 /* libPods-UIFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDC548EBFFE0FC32CE99455 /* libPods-UIFramework.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,10 @@
 		20CD97CF244BD6E7000213BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20FE4B91244CBDED00755DFF /* CaptureReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureReviewView.swift; sourceTree = "<group>"; };
 		3C6ABEFE957FE847920B571A /* Pods-BoothUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoothUI.release.xcconfig"; path = "Target Support Files/Pods-BoothUI/Pods-BoothUI.release.xcconfig"; sourceTree = "<group>"; };
+		79B83135313474BF33AF9E51 /* Pods-UIFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFramework.release.xcconfig"; path = "Target Support Files/Pods-UIFramework/Pods-UIFramework.release.xcconfig"; sourceTree = "<group>"; };
+		95A021F0528E7716166498B3 /* Pods-UIFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFramework.debug.xcconfig"; path = "Target Support Files/Pods-UIFramework/Pods-UIFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		A7FCEF19BFB62ED9ED70A8E7 /* Pods-BoothUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoothUI.debug.xcconfig"; path = "Target Support Files/Pods-BoothUI/Pods-BoothUI.debug.xcconfig"; sourceTree = "<group>"; };
+		ADDC548EBFFE0FC32CE99455 /* libPods-UIFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIFramework.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D371810EF810556997F22EBB /* libPods-BoothUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BoothUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F3584B0D5479BB5D4F0CF3 /* Pods-BoothUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoothUI.release.xcconfig"; path = "Target Support Files/Pods-BoothUI/Pods-BoothUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FFCEF75D94C549C4F9ABA2 /* libPods-UIFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				A7FCEF19BFB62ED9ED70A8E7 /* Pods-BoothUI.debug.xcconfig */,
 				3C6ABEFE957FE847920B571A /* Pods-BoothUI.release.xcconfig */,
+				95A021F0528E7716166498B3 /* Pods-UIFramework.debug.xcconfig */,
+				79B83135313474BF33AF9E51 /* Pods-UIFramework.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -102,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D371810EF810556997F22EBB /* libPods-BoothUI.a */,
+				ADDC548EBFFE0FC32CE99455 /* libPods-UIFramework.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20908267244BFE2700AABF56 /* Build configuration list for PBXNativeTarget "UIFramework" */;
 			buildPhases = (
+				67A40B979EE64D0F6FB34D08 /* [CP] Check Pods Manifest.lock */,
 				20908256244BFE2700AABF56 /* Headers */,
 				20908257244BFE2700AABF56 /* Sources */,
 				20908258244BFE2700AABF56 /* Frameworks */,
@@ -183,6 +192,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67A40B979EE64D0F6FB34D08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20908257244BFE2700AABF56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,12 +236,13 @@
 /* Begin XCBuildConfiguration section */
 		20908265244BFE2700AABF56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A021F0528E7716166498B3 /* Pods-UIFramework.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4WSRPTZX5J;
+				DEVELOPMENT_TEAM = 5SC32596K7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -232,12 +267,13 @@
 		};
 		20908266244BFE2700AABF56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B83135313474BF33AF9E51 /* Pods-UIFramework.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4WSRPTZX5J;
+				DEVELOPMENT_TEAM = 5SC32596K7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

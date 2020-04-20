@@ -27,8 +27,8 @@ public struct BoothSelectionView: View {
 
         return Group {
             if showCamera {
-                // TODO ThermalCameraView(isShown: $showCamera, image: currentImage)
-                NativeCameraView(isShown: $showCamera, image: currentImage)
+                 ThermalViewRepresentable(isShown: $showCamera, image: currentImage)
+//                NativeCameraView(isShown: $showCamera, image: currentImage)
             } else if pendingImage != nil {
                 CaptureReviewView(image: $pendingImage, discard: {
                     self.pendingImage = nil
