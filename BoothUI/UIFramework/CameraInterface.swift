@@ -8,28 +8,23 @@
 
 import SwiftUI
 
-public struct CameraInterface: View {
-    @Binding var image: Image?
-    let capture: (Image) -> Void
+public struct CameraInterface<Stream>: View where Stream: View {
+    let capture: () -> Void
     let back: () -> Void
+    let stream: () -> Stream
 
-    public init(image: Binding<Image?>,
-                capture: @escaping (Image) -> Void,
-                back: @escaping () -> Void) {
-        _image = image
+    public init(capture: @escaping () -> Void,
+                back: @escaping () -> Void,
+                @ViewBuilder stream: @escaping () -> Stream) {
         self.back = back
         self.capture = capture
+        self.stream = stream
     }
 
     public var body: some View {
         ZStack {
-            Group {
-                if image != nil {
-                    image?.resizable().background(Color.black)
-                } else {
-                    Text("No Source Detected")
-                }
-            }
+            stream()
+
             VStack {
                 Spacer()
                 HStack(alignment: .bottom) {
@@ -51,9 +46,7 @@ public struct CameraInterface: View {
 
                     Button(
                         action: {
-                            if let image = self.image {
-                                self.capture(image)
-                            }
+                            self.capture()
                         }, label: {
                             Image(systemName: "camera.fill")
                         }
@@ -76,13 +69,12 @@ struct CameraInterface_Previews: PreviewProvider {
     static var bundle = Bundle(path: "org.getyourgreenbacktompkins.UIFramework")
     static var previews: some View {
         CameraInterface(
-            image: .constant(
-            Image(
-                "ImageA",
-                bundle: bundle
-                )
-            ),
-            capture: { _ in print("Image Captured!") },
-            back: { print("Go Back!") })
+            capture: { print("Image Captured!") },
+            back: { print("Go Back!") }) {
+                Image(
+                    "ImageA",
+                    bundle: bundle
+                    )
+        }
     }
 }

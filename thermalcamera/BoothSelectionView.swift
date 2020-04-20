@@ -18,16 +18,14 @@ public struct BoothSelectionView: View {
 
     public var body: some View {
         let currentImage = Binding<Image?>(get: {
-            nil
-        }, set: {
-            if let image = $0 {
-                self.pendingImage = image
-            }
+            return self.pendingImage
+        }, set: { image in
+            self.pendingImage = image
         })
 
         return Group {
             if showCamera {
-                 ThermalViewRepresentable(isShown: $showCamera, image: currentImage)
+                 ThermalCameraView(isShown: $showCamera, image: currentImage)
 //                NativeCameraView(isShown: $showCamera, image: currentImage)
             } else if pendingImage != nil {
                 CaptureReviewView(image: $pendingImage, discard: {

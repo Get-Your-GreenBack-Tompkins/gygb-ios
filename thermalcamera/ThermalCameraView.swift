@@ -7,76 +7,61 @@
 //
 
 import SwiftUI
+import UIFramework
 
 struct ThermalViewRepresentable: UIViewRepresentable {
-    
+
     @Binding var isShown: Bool
-    @Binding var image: Image?
-    
-    init(isShown: Binding<Bool>, image: Binding<Image?>) {
+    @Binding var image: UIImage?
+
+    init(isShown: Binding<Bool>, image: Binding<UIImage?>) {
         _isShown = isShown
         _image = image
     }
-    
-    func updateUIView(_: ThermalCameraView, context _: Context) {
-        print("updating...")
+
+    public func makeCoordinator() -> ThermalCameraCoordinator {
+        return ThermalCameraCoordinator(image: $image)
     }
-    
-    func setImage(i: Image) {
-        image = i
+
+    func makeUIView(context: Context) -> UIImageView {
+        let frameViewer = UIImageView()
+
+        frameViewer.translatesAutoresizingMaskIntoConstraints = false
+        frameViewer.backgroundColor = .black
+
+        return frameViewer
     }
-    
-    func makeUIView(context _: Context) -> ThermalCameraView {
-        let view = ThermalCameraView(frame: .zero)
-        view.onCapture { i in
-            self.setImage(i: i)
+
+    func updateUIView(_ uiView: UIImageView, context: Context) {
+        print("updating image viewer...")
+        if isShown {
+            print("setting image...")
+            uiView.image = image
+            uiView.setNeedsDisplay()
         }
-        view.onSave {
-            self.isShown = !self.isShown
-        }
-        return view
     }
 }
 
-class ThermalCameraView: UIView, FLIRDiscoveryEventDelegate, FLIRDataReceivedDelegate {
-    
+public class ThermalCameraCoordinator: NSObject, FLIRDiscoveryEventDelegate, FLIRDataReceivedDelegate {
+    @Binding var image: UIImage?
+
+    public init(image: Binding<UIImage?>) {
+        _image = image
+
+        super.init()
+
+        camera = FLIRCamera()
+        camera.delegate = self
+
+        discoverer = FLIRDiscovery()
+        discoverer.delegate = self
+        discoverer.start(FLIRCommunicationInterface.emulator)
+    }
+
     var discoverer: FLIRDiscovery!
     var camera: FLIRCamera!
-    var frameViewer: UIImageView!
-    var container: UIView!
-    var capture: UIButton!
-    var updateImage: ((Image) -> Void)!
-    var saveImage: (() -> Void)!
-    
-    func onCapture(callback: @escaping (Image) -> Void) {
-        updateImage = callback
-    }
-    
-    func onSave(callback: @escaping () -> Void) {
-        saveImage = callback
-    }
-    
-    @objc func touchUpCapture(sender: UIButton!) {
-        print("HI")
-        if let weakCamera = self.camera {
-            // Run on the main thread (async)
-            // Get the camera's image.
-            if weakCamera.isGrabbing() {
-                print("HI3")
-                weakCamera.withImage { (image: FLIRThermalImage) in
-                    let newImage = image.getImage();
-                    print(newImage)
-                    self.updateImage(Image(uiImage: newImage!))
 
-                }
-            }
-        }
-        self.camera.unsubscribeStream()
-        self.saveImage()
-    }
-    
-    func cameraFound(_ cameraIdentity: FLIRIdentity) {
-
+    public func cameraFound(_ cameraIdentity: FLIRIdentity) {
         // Run in the main thread.
         DispatchQueue.main.async {
             // Connect our camera to the found identity.
@@ -85,11 +70,11 @@ class ThermalCameraView: UIView, FLIRDiscoveryEventDelegate, FLIRDataReceivedDel
             self.discoverer.stop()
         }
     }
-    
-    func discoveryError(_ error: String, netServiceError nsnetserviceserror: Int32, on iface: FLIRCommunicationInterface) {
+
+    public func discoveryError(_ error: String, netServiceError nsnetserviceserror: Int32, on iface: FLIRCommunicationInterface) {
     }
-    
-    func onConnectionStatusChanged(_ camera: FLIRCamera, status: FLIRConnectionStatus, withError error: Error?) {
+
+    public func onConnectionStatusChanged(_ camera: FLIRCamera, status: FLIRConnectionStatus, withError error: Error?) {
         if status == FLIRConnectionStatus.connected {
             // Stream frames.
             camera.subscribeStream()
@@ -98,14 +83,10 @@ class ThermalCameraView: UIView, FLIRDiscoveryEventDelegate, FLIRDataReceivedDel
         if status == FLIRConnectionStatus.disconnected {
             // Stop streaming frames.
             camera.unsubscribeStream()
-
-            DispatchQueue.main.async { [weak self] in
-                self?.frameViewer.image = nil
-            }
         }
     }
 
-    func imageReceived() {
+    public func imageReceived() {
         // Streamed frames are handled here.
 
         // Reference the camera.
@@ -125,7 +106,7 @@ class ThermalCameraView: UIView, FLIRDiscoveryEventDelegate, FLIRDataReceivedDel
 //                        image.setColorDistribution(TemperatureLinear)
                         image.palette = image.paletteManager.rainbow
                         
-                        self.frameViewer?.image = image.getImage()
+                        self.image = image.getImage()
                         if let fusion = image.getFusion() {
 
                         }
@@ -136,54 +117,51 @@ class ThermalCameraView: UIView, FLIRDiscoveryEventDelegate, FLIRDataReceivedDel
             }
         }
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.clipsToBounds = true
+}
 
-        container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        
-        frameViewer = UIImageView()
-        frameViewer.translatesAutoresizingMaskIntoConstraints = false
-        frameViewer.backgroundColor = .black
+struct ThermalCameraView : View {
+    @Binding var isShown: Bool
+    @Binding var image: Image?
+    @State var uiImage: UIImage?
 
-        capture = UIButton(type: .roundedRect)
-        capture.translatesAutoresizingMaskIntoConstraints = false
-        capture.setTitle("Take picture", for: .normal)
-        capture.addTarget(self, action: #selector(touchUpCapture), for: .touchUpInside)
-        container.addSubview(capture)
-        container.addSubview(frameViewer)
-        addSubview(container)
-        constraints()
-        
-        camera = FLIRCamera()
-        camera.delegate = self
-
-        discoverer = FLIRDiscovery()
-        discoverer.delegate = self
-        discoverer.start(FLIRCommunicationInterface.emulator)
+    init(isShown: Binding<Bool>, image: Binding<Image?>) {
+        _isShown = isShown
+        _image = image
     }
-    
-    func constraints() {
-        NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: self.topAnchor),
-            container.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            capture.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            capture.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 270),
 
-            frameViewer.topAnchor.constraint(equalTo: container.topAnchor, constant: 0),
-            frameViewer.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 0),
-            frameViewer.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: 0),
-            frameViewer.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.7),
-            frameViewer.widthAnchor.constraint(equalTo: container.widthAnchor),
-        ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    var body: some View {
+        let imageBinding = Binding<UIImage?>(get: {
+            return self.uiImage
+        }, set: { uiImage in
+            self.uiImage = uiImage
+
+            if self.isShown {
+                if let uiImage = uiImage {
+                    self.image = Image(uiImage: uiImage)
+                } else {
+                    self.image = nil
+                }
+            }
+        })
+
+        return ZStack {
+            CameraInterface(capture: {
+                self.isShown = false
+            },
+            back: {
+                self.image = nil
+                self.isShown = false
+            }) {
+                if self.isShown {
+                    ThermalViewRepresentable(
+                        isShown: self.$isShown,
+                        image: imageBinding
+                    )
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                } else {
+                    Text("No Source Detected.")
+                }
+            }
+        }
     }
 }
