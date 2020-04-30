@@ -2,12 +2,12 @@
 //  thermalcameraTests.swift
 //  thermalcameraTests
 //
-//  Created by Ashneel  Das on 1/27/20.
-//  Copyright © 2020 Ashneel  Das. All rights reserved.
+//  Created by Ashneel Das on 1/27/20.
+//  Copyright © 2020 Get Your GreenBack Tompkins. All rights reserved.
 //
 
 import XCTest
-@testable import thermalcamera
+//@testable import thermalcamera
 
 class ThermalCameraTests: XCTestCase {
 
