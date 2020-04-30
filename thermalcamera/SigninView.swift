@@ -9,6 +9,7 @@ import SwiftUI
 
 import Firebase
 import GoogleSignIn
+import UIFramework
 
 struct SigninView: View {
     @State var email: String = ""
@@ -34,15 +35,27 @@ struct SigninView: View {
 
     var body: some View {
         VStack {
-            TextField("Enter email here", text: $email).padding(.all, 5)
-            SecureField("Enter password", text: $password).padding(.all, 5)
-
-            Button(action: login) {
-                Text("Submit")
-            }.alert(isPresented: self.$showAlert, content: {
-                Alert(title: Text("Error"), message: Text(error?.localizedDescription ?? "Unknown error"),
-                                                          dismissButton: .default(Text("OK")))
-            })
+            Text("Sign In")
+                .bold()
+                .font(.system(size: 25))
+                .padding(.bottom, 350)
+            VStack {
+                TextField("Enter email here", text: $email).padding(.all, 5)
+                    .frame(width: 150, height: 30, alignment: .center)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                SecureField("Enter password", text: $password).padding(.all, 5)
+                    .frame(width: 150, height: 30, alignment: .center)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Button(action: login) {
+                    Text("Sign In")
+                }.alert(isPresented: self.$showAlert, content: {
+                    Alert(title: Text("Error"), message: Text(error?.localizedDescription ?? "Unknown error"),
+                                                              dismissButton: .default(Text("OK")))
+                })
+                    .padding(.top, 35)
+                    .frame(width: 120, height: 15)
+                    .buttonStyle(BoothPrimaryButtonStyle())
+            }.padding(.bottom, 400)
         }
     }
 }

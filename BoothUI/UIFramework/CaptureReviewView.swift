@@ -11,13 +11,16 @@ import SwiftUI
 public struct CaptureReviewView: View {
     // TODO Should this be a binding?
     @Binding var image: Image?
+    @Binding var uiimage: UIImage?
     let discard: () -> Void
     let save: () -> Void
 
     public init(image: Binding<Image?>,
+                uiimage: Binding<UIImage?>,
                 discard: @escaping () -> Void,
                 save: @escaping () -> Void) {
         _image = image
+        _uiimage = uiimage
         self.discard = discard
         self.save = save
     }
@@ -81,7 +84,7 @@ struct CaptureReviewView_Previews: PreviewProvider {
                 "ImageA",
                 bundle: bundle
             )
-        ),
+            ), uiimage: .constant(UIImage()),
                           discard: { print("Image Discarded!") },
                           save: { print("Save!") })
     }

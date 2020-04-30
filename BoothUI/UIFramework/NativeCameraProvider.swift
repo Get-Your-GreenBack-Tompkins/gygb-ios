@@ -11,16 +11,19 @@ import SwiftUI
 public class CameraCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @Binding var isShown: Bool
     @Binding var image: Image?
-
-    public init(isShown: Binding<Bool>, image: Binding<Image?>) {
+    @Binding var uiImage: UIImage?
+    
+    public init(isShown: Binding<Bool>, image: Binding<Image?>, uiImage: Binding<UIImage?>) {
         _isShown = isShown
         _image = image
+        _uiImage = uiImage
     }
 
     public func imagePickerController(_: UIImagePickerController,
                                                                         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let unwrapImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         image = Image(uiImage: unwrapImage)
+        uiImage = unwrapImage
         isShown = false
     }
 
@@ -32,14 +35,16 @@ public class CameraCoordinator: NSObject, UINavigationControllerDelegate, UIImag
 public struct NativeCameraView: UIViewControllerRepresentable {
     @Binding var isShown: Bool
     @Binding var image: Image?
-
-    public init(isShown: Binding<Bool>, image: Binding<Image?>) {
+    @Binding var uiImage: UIImage?
+    
+    public init(isShown: Binding<Bool>, image: Binding<Image?>, uiImage: Binding<UIImage?>) {
         _isShown = isShown
         _image = image
+        _uiImage = uiImage
     }
 
     public func makeCoordinator() -> CameraCoordinator {
-        return Coordinator(isShown: $isShown, image: $image)
+        return Coordinator(isShown: $isShown, image: $image, uiImage: $uiImage)
     }
 
     public func makeUIViewController(context: UIViewControllerRepresentableContext<NativeCameraView>) -> UIImagePickerController {

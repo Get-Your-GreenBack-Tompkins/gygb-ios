@@ -57,8 +57,10 @@ struct InternalGridView<Element>: View where Element: View {
     private let deleteItem: (Int) -> Void
     private let spacing: CGFloat
     @Binding private var items: [Element]
+    @Binding private var uiitems: [UIImage]
 
     init(items: Binding<[Element]>,
+         uiitems: Binding<[UIImage]>,
          itemWidth: CGFloat,
          spacing: CGFloat,
          addItem: @escaping (Int) -> Void,
@@ -66,6 +68,7 @@ struct InternalGridView<Element>: View where Element: View {
          rows: [[Int]],
          maxItemCount: Int) {
         _items = items
+        _uiitems = uiitems
         self.itemWidth = itemWidth
         self.addItem = addItem
         self.spacing = spacing
@@ -131,13 +134,15 @@ public struct GridView<Element>: View where Element: View {
     private let deleteItem: (Int) -> Void
     private let maxItemCount: Int
     private let spacing: CGFloat
+    @Binding private var uiitems: [UIImage]
     @Binding private var items: [Element]
 
-    public init(items: Binding<[Element]>, maxItemCount: Int, columnCount: Int,
+    public init(items: Binding<[Element]>, uiitems: Binding<[UIImage]>, maxItemCount: Int, columnCount: Int,
          spacing: Int,
          addItem: @escaping (Int) -> Void,
          deleteItem: @escaping (Int) -> Void) {
         _items = items
+        _uiitems = uiitems
         self.maxItemCount = maxItemCount
         self.addItem = addItem
         self.deleteItem = deleteItem
@@ -151,6 +156,7 @@ public struct GridView<Element>: View where Element: View {
         GeometryReader { geometry in
             InternalGridView(
                 items: self.$items,
+                uiitems: self.$uiitems,
                 itemWidth: calculateColumnWidth(
                     totalWidth: geometry.size.width,
                     minimumItemWidth: 32,

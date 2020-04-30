@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		080CA94123F8FC0C00E4B056 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */; };
+		08261772245657EC004DCE83 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08261771245657EC004DCE83 /* UploadView.swift */; };
+		08261776245658DC004DCE83 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08261775245658DC004DCE83 /* UploadView.swift */; };
+		083426DB245A797600FDE90D /* GYGBlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 083426DA245A797500FDE90D /* GYGBlogo.png */; };
+		083426DD245A7AC000FDE90D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083426DC245A7AC000FDE90D /* WelcomeView.swift */; };
 		087869D0240DDED90057133B /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087869CF240DDED90057133B /* LegalView.swift */; };
 		088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* SigninView.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
@@ -72,6 +76,10 @@
 /* Begin PBXFileReference section */
 		02FA7FB8FE8570771DC8F566 /* Pods-thermalcameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thermalcameraTests.debug.xcconfig"; path = "Target Support Files/Pods-thermalcameraTests/Pods-thermalcameraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		080CA94023F8FC0C00E4B056 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "thermalcamera/Secrets/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08261771245657EC004DCE83 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		08261775245658DC004DCE83 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		083426DA245A797500FDE90D /* GYGBlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GYGBlogo.png; sourceTree = "<group>"; };
+		083426DC245A7AC000FDE90D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +178,10 @@
 		08D67CAC23DFAD2D00B92CB5 /* thermalcamera */ = {
 			isa = PBXGroup;
 			children = (
+				08261775245658DC004DCE83 /* UploadView.swift */,
 				08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */,
 				08D67CB623DFAD3000B92CB5 /* Assets.xcassets */,
+				083426DA245A797500FDE90D /* GYGBlogo.png */,
 				20CD97E3244BE316000213BF /* BoothNavigationView.swift */,
 				20CD9797244BA290000213BF /* BoothSelectionView.swift */,
 				20CD9789244BA0AA000213BF /* DashboardViewController.swift */,
@@ -186,6 +196,8 @@
 				206949AC244CA99200040DF3 /* ThermalCameraView.swift */,
 				20CD9788244BA0AA000213BF /* validation.swift */,
 				08D67CB123DFAD2D00B92CB5 /* ViewController.swift */,
+				08261771245657EC004DCE83 /* UploadView.swift */,
+				083426DC245A7AC000FDE90D /* WelcomeView.swift */,
 			);
 			path = thermalcamera;
 			sourceTree = "<group>";
@@ -352,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */,
+				083426DB245A797600FDE90D /* GYGBlogo.png in Resources */,
 				080CA94123F8FC0C00E4B056 /* GoogleService-Info.plist in Resources */,
 				20CD979A244BB302000213BF /* Default-568h@2x.png in Resources */,
 			);
@@ -535,14 +548,17 @@
 				08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */,
 				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
+				083426DD245A7AC000FDE90D /* WelcomeView.swift in Sources */,
 				20CD9790244BA0AA000213BF /* validation.swift in Sources */,
 				08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */,
 				20CD97E6244BF991000213BF /* EmailView.swift in Sources */,
+				08261776245658DC004DCE83 /* UploadView.swift in Sources */,
 				20CD9798244BA290000213BF /* BoothSelectionView.swift in Sources */,
 				087869D0240DDED90057133B /* LegalView.swift in Sources */,
 				206949AD244CA99200040DF3 /* ThermalCameraView.swift in Sources */,
 				20CD97E4244BE316000213BF /* BoothNavigationView.swift in Sources */,
 				20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */,
+				08261772245657EC004DCE83 /* UploadView.swift in Sources */,
 				20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */,
 				20CD97E2244BE28E000213BF /* FirebaseUser.swift in Sources */,
 			);
@@ -612,6 +628,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -673,6 +690,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;

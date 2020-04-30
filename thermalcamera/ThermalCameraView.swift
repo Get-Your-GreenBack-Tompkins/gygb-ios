@@ -13,10 +13,12 @@ struct ThermalViewRepresentable: UIViewRepresentable {
 
     @Binding var isShown: Bool
     @Binding var image: UIImage?
-
-    init(isShown: Binding<Bool>, image: Binding<UIImage?>) {
+    @Binding var needsToRemove: Bool
+    
+    init(isShown: Binding<Bool>, image: Binding<UIImage?>, needsToRemove: Binding<Bool>) {
         _isShown = isShown
         _image = image
+        _needsToRemove = needsToRemove
     }
 
     public func makeCoordinator() -> ThermalCameraCoordinator {
@@ -24,22 +26,35 @@ struct ThermalViewRepresentable: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> UIImageView {
-        let frameViewer = UIImageView()
-
-        frameViewer.translatesAutoresizingMaskIntoConstraints = false
+        let frameViewer = UIImageView()                                                                                                     
+        frameViewer.contentMode = UIView.ContentMode.scaleToFill
         frameViewer.backgroundColor = .black
-
+        frameViewer.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0).cgColor
+        frameViewer.layer.borderWidth = 5
         return frameViewer
     }
 
+    func setIsShown() {
+        self.isShown = false
+    }
+    
     func updateUIView(_ uiView: UIImageView, context: Context) {
         print("updating image viewer...")
-        if isShown {
+        if (needsToRemove) {
+            context.coordinator.cleanup(callback: setIsShown)
+        }
+        else {
             print("setting image...")
-            uiView.image = image
-            uiView.setNeedsDisplay()
+            if image != nil && image?.size.width != 0 {
+                DispatchQueue.main.async {
+                    uiView.image = self.image
+                    uiView.setNeedsDisplay()
+                }
+            }
         }
     }
+    
+    
 }
 
 public class ThermalCameraCoordinator: NSObject, FLIRDiscoveryEventDelegate, FLIRDataReceivedDelegate {
@@ -55,12 +70,34 @@ public class ThermalCameraCoordinator: NSObject, FLIRDiscoveryEventDelegate, FLI
 
         discoverer = FLIRDiscovery()
         discoverer.delegate = self
-        discoverer.start(FLIRCommunicationInterface.emulator)
+        discoverer.start(FLIRCommunicationInterface.lightning)
     }
 
     var discoverer: FLIRDiscovery!
     var camera: FLIRCamera!
 
+    public func cleanup(callback: (@escaping () -> (Void))) {
+
+        if let weakCamera = self.camera {
+        // Run on the main thread (async)
+        // Get the camera's image.
+        if weakCamera.isGrabbing() {
+            DispatchQueue.global().async {
+                weakCamera.withImage { (image: FLIRThermalImage) in
+
+                    if let newImage = image.getImage() {
+                        print(newImage)
+                        self.image = newImage
+                        self.camera = nil
+                        self.discoverer = nil
+                        callback()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     public func cameraFound(_ cameraIdentity: FLIRIdentity) {
         // Run in the main thread.
         DispatchQueue.main.async {
@@ -88,7 +125,7 @@ public class ThermalCameraCoordinator: NSObject, FLIRDiscoveryEventDelegate, FLI
 
     public func imageReceived() {
         // Streamed frames are handled here.
-
+        print("HERE")
         // Reference the camera.
         if let weakCamera = self.camera {
             // Run on the main thread (async)
@@ -122,11 +159,15 @@ public class ThermalCameraCoordinator: NSObject, FLIRDiscoveryEventDelegate, FLI
 struct ThermalCameraView : View {
     @Binding var isShown: Bool
     @Binding var image: Image?
+    @Binding var currentuiImage: UIImage?
+    @State var needsToRemove: Bool = false
     @State var uiImage: UIImage?
 
-    init(isShown: Binding<Bool>, image: Binding<Image?>) {
+    init(isShown: Binding<Bool>, image: Binding<Image?>, uiImage: Binding<UIImage?>) {
         _isShown = isShown
         _image = image
+        _currentuiImage = uiImage
+        self.needsToRemove = false
     }
 
     var body: some View {
@@ -134,10 +175,10 @@ struct ThermalCameraView : View {
             return self.uiImage
         }, set: { uiImage in
             self.uiImage = uiImage
-
             if self.isShown {
                 if let uiImage = uiImage {
-                    self.image = Image(uiImage: uiImage)
+                    self.currentuiImage = uiImage
+                    self.image = Image(uiImage: uiImage).resizable()
                 } else {
                     self.image = nil
                 }
@@ -146,7 +187,7 @@ struct ThermalCameraView : View {
 
         return ZStack {
             CameraInterface(capture: {
-                self.isShown = false
+                self.needsToRemove = true
             },
             back: {
                 self.image = nil
@@ -155,7 +196,8 @@ struct ThermalCameraView : View {
                 if self.isShown {
                     ThermalViewRepresentable(
                         isShown: self.$isShown,
-                        image: imageBinding
+                        image: imageBinding,
+                        needsToRemove: self.$needsToRemove
                     )
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 } else {

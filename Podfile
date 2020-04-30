@@ -26,6 +26,7 @@ target 'thermalcamera' do
   pod 'FirebaseUI'
   pod 'Firebase/Core'
   pod 'Firebase'
+  pod 'ZIPFoundation', '~> 0.9'
   
   target 'thermalcameraTests' do
     inherit! :search_paths

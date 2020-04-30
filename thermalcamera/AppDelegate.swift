@@ -12,6 +12,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     func sign(_: GIDSignIn!, didSignInFor _: GIDGoogleUser!, withError _: Error?) {
         // ...
     }

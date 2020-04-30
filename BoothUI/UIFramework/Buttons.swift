@@ -9,6 +9,9 @@
 import SwiftUI
 
 public struct BoothPrimaryButtonStyle: ButtonStyle {
+    
+    public init() {}
+    
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
