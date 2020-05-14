@@ -17,7 +17,7 @@ public struct BoothPrimaryButtonStyle: ButtonStyle {
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
             .foregroundColor(.white)
-            .background(Color(red: 144 / 255.0, green: 205 / 255.0, blue: 78 / 255.0))
+            .background(Color(red: 47/255.0, green: 128/255.0, blue: 237/255.0))
             .cornerRadius(50)
             .shadow(color: Color(
                 red: 0,
