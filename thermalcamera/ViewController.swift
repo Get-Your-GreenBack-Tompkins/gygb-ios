@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 
         container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.backgroundColor = UIColor.white
+        container.backgroundColor = UIColor(red: 244/255.0, green: 244/255.0, blue: 244/255.0, alpha: 1)
 
         view.addSubview(container)
 

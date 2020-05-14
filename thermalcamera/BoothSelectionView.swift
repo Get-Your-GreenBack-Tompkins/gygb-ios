@@ -77,7 +77,9 @@ public struct BoothSelectionView: View {
                     })
                     .frame(width: 130, height: 20)
                     .buttonStyle(BoothPrimaryButtonStyle())
-                        .padding(.bottom, 50)
+                    .backgroundColor((UIColor(red: 47/255.0, green: 128/255.0, blue: 237/255.0, alpha: 1))
+                    .padding(.bottom, 50)
+                    .cornerRadius(30)
                 }
             }
             else {

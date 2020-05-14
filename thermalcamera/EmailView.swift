@@ -29,20 +29,20 @@ class EmailView: UIView {
         emailField.translatesAutoresizingMaskIntoConstraints = false
         emailField.layer.cornerRadius = 5
         emailField.layer.borderWidth = 1
-        emailField.layer.borderColor = UIColor.black.cgColor
+        emailField.layer.borderColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1)
 
         submitButton = UIButton()
         submitButton.clipsToBounds = true
         submitButton.translatesAutoresizingMaskIntoConstraints = false
 
         submitButton.setTitle("Submit", for: .normal)
-        submitButton.setTitleColor(UIColor.blue, for: .normal)
+        submitButton.setTitleColor(UIColor(red: 244/255.0, green: 244/255.0, blue: 244/255.0, alpha: 1), for: .normal)
         submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
         submitButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
-        submitButton.backgroundColor = UIColor.white
+        submitButton.backgroundColor = UIColor(red: 47/255.0, green: 128/255.0, blue: 237/255.0, alpha: 1) 
         submitButton.layer.cornerRadius = 5
         submitButton.layer.borderWidth = 1
-        submitButton.layer.borderColor = UIColor.black.cgColor
+        submitButton.layer.borderColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1)
 
         addSubview(submitButton)
         addSubview(emailField)

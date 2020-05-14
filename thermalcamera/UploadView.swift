@@ -54,7 +54,10 @@ struct UploadView: View {
                         .frame(width: 150, height: 30, alignment: .center)
                         .padding(.top, 10)
                         .padding(.bottom, 20)
+                        .textColor(UIColor(red:51/255.0 , green:51/255.0, blue:51/255.0, alpha: 1))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .borderWidth(2)
+                        .borderColor(UIColor(red:51/255.0 , green:51/255.0, blue:51/255.0, alpha: 1))
                     Button(action: {
                         let dateFormatter = DateFormatter()
                         let date = Date()
@@ -98,7 +101,9 @@ struct UploadView: View {
                     })
                     .padding()
                     .frame(width: 120, height: 15)
-                    .buttonStyle(BoothPrimaryButtonStyle())
+                    // .buttonStyle(BoothPrimaryButtonStyle())
+                    .backgroundColor((UIColor(red: 47/255.0, green: 128/255.0, blue:237255.0, alpha:1))
+                    .foregroundColor(UIColor(red: 244/255.0, green: 244/255.0, blue: 244/255.0, alpha: 1))
                 }.padding(.bottom, 400)
         })
     }
