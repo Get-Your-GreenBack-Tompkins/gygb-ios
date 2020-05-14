@@ -12,16 +12,55 @@ import UIFramework
 import FirebaseStorage
 import ZIPFoundation
 
+struct ActivityIndicator: UIViewRepresentable {
+
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+    }
+}
+
+struct CheckView: View {
+    @Binding var isChecked:Bool?
+    var title: String = "Get Additional Emails from GYGB about Green Living"
+    
+    init(checked: Binding<Bool?>) {
+        _isChecked = checked
+    }
+    
+    func toggle(){
+        isChecked = !isChecked!
+    }
+    var body: some View {
+        Button(action: toggle){
+            HStack{
+                Image(systemName: isChecked! ? "checkmark.square": "square")
+                Text(title).foregroundColor(Color.black)
+            }
+        }
+    }
+
+}
 struct UploadView: View {
     
     @EnvironmentObject var settings: SessionSettings
     var images: [UIImage]
     @State var email : String = ""
+    @State var checked: Bool? = false
     var emailSent: () -> Void
+    var uploadDone: () -> Void
+    @State var sendingText: String = ""
     
-    init(images: [UIImage], emailSent: @escaping () -> Void) {
+    init(images: [UIImage], emailSent: @escaping () -> Void, uploadDone: @escaping () -> Void) {
         self.images = images
         self.emailSent = emailSent
+        self.uploadDone = uploadDone
     }
     
     func archiveData() -> Data {
@@ -41,21 +80,23 @@ struct UploadView: View {
                 Text("Send your images to yourself!")
                     .bold()
                     .font(.system(size: 25))
-                    .padding(.bottom, 250)
+                    .padding(.bottom, 200)
                 VStack {
                     HStack {
                         ForEach(Array(0...self.images.count - 1), id: \.self) { index in
                             Image(uiImage: self.images[index]).resizable()
-                            .frame(width: 100, height: 100)
+                            .frame(width: 150, height: 150)
                             .cornerRadius(5)
                         }
                     }
                     TextField("Enter your email!", text: $email)
                         .frame(width: 150, height: 30, alignment: .center)
                         .padding(.top, 10)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 10)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                    CheckView(checked: $checked)
                     Button(action: {
+                        self.sendingText = "Sending photo..."
                         let dateFormatter = DateFormatter()
                         let date = Date()
                         print("hi")
@@ -91,15 +132,16 @@ struct UploadView: View {
                             if (error != nil) {
                                 print("error")
                             }
-                            self.emailSent()
+                            self.uploadDone()
                         }
                     }, label: {
                         Text("Send Photos")
                     })
-                    .padding()
-                    .frame(width: 120, height: 15)
+                        .padding(.top, 40)
+                    .frame(width: 220, height: 15)
                     .buttonStyle(BoothPrimaryButtonStyle())
-                }.padding(.bottom, 400)
+                }
+                Text("\(sendingText)").padding(.top, 50).padding(.bottom, 330)
         })
     }
 }

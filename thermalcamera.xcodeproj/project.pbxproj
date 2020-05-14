@@ -14,6 +14,7 @@
 		083426DD245A7AC000FDE90D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083426DC245A7AC000FDE90D /* WelcomeView.swift */; };
 		087869D0240DDED90057133B /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087869CF240DDED90057133B /* LegalView.swift */; };
 		088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D1DE123F7487D00BFD4D3 /* SigninView.swift */; };
+		08B22983246DC2BD00493D80 /* ImageSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B22982246DC2BD00493D80 /* ImageSent.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
 		08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */; };
 		08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CB123DFAD2D00B92CB5 /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		083426DC245A7AC000FDE90D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		087869CF240DDED90057133B /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		088D1DE123F7487D00BFD4D3 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		08B22982246DC2BD00493D80 /* ImageSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSent.swift; sourceTree = "<group>"; };
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				08D67CB123DFAD2D00B92CB5 /* ViewController.swift */,
 				08261771245657EC004DCE83 /* UploadView.swift */,
 				083426DC245A7AC000FDE90D /* WelcomeView.swift */,
+				08B22982246DC2BD00493D80 /* ImageSent.swift */,
 			);
 			path = thermalcamera;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				20CD97E4244BE316000213BF /* BoothNavigationView.swift in Sources */,
 				20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */,
 				08261772245657EC004DCE83 /* UploadView.swift in Sources */,
+				08B22983246DC2BD00493D80 /* ImageSent.swift in Sources */,
 				20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */,
 				20CD97E2244BE28E000213BF /* FirebaseUser.swift in Sources */,
 			);
