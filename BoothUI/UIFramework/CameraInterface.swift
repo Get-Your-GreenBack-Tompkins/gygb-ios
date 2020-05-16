@@ -59,7 +59,7 @@ public struct CameraInterface<Stream>: View where Stream: View {
                     Spacer().frame(width: 80)
                 }
                 .padding(.all, 20)
-                .background(Color.white.opacity(0.95))
+                .background(Color((red: 0.2, green: 0.2, blue: 0.2, alpha: 0.7).cgColor))
             }
         }
     }

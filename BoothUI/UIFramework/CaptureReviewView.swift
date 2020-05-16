@@ -31,7 +31,7 @@ public struct CaptureReviewView: View {
 
             Group {
                 if image != nil {
-                    image?.resizable().frame(width: 250, height: 250).background(Color.black).cornerRadius(30)
+                    image?.resizable().frame(width: 652.3, height: 650).background(Color.black).cornerRadius(30)
                 } else {
                     Text("No Source Detected")
                 }
@@ -47,7 +47,7 @@ public struct CaptureReviewView: View {
                         Text("Discard")
                     }
                 )
-                .buttonStyle(BoothSecondaryButtonStyle())
+                .buttonStyle(BoothTertiaryButtonStyle())
                 .alignmentGuide(HorizontalAlignment.leading) {
                     (elem) -> CGFloat in elem[HorizontalAlignment.leading]
                 }
