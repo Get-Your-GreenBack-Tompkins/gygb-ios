@@ -25,6 +25,8 @@ struct LegalViewRepresentable: UIViewRepresentable {
 
     func makeUIView(context _: Context) -> LegalView {
         let view = LegalView(frame: .zero)
+        view.background(Color(red: 0.95686274509, green: 0.95686274509, blue: 0.95686274509, alpha: 1)))
+
         view.onAccept {
             self.accept()
         }
@@ -47,7 +49,7 @@ class LegalView: UIView {
 
     @objc func acceptTouchUp(sender: UIButton!) {
         sender.setTitleColor(UIColor.white, for: .normal)
-        sender.backgroundColor(UIColor(red: 47/255.0, green: 128/255.0, blue: 237/255.0, alpha: 1))
+        sender.backgroundColor(#colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1))
 
         if let callback = accept {
             callback()
@@ -55,7 +57,9 @@ class LegalView: UIView {
     }
 
     @objc func declineTouchUp(sender: UIButton!) {
-        sender.setTitleColor(UIColor.blue, for: .normal)
+        sender.setTitleColor(UIColor.white, for: .normal)
+        sender.backgroundColor(#colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1))
+
 
         if let callback = decline {
             callback()
@@ -63,7 +67,8 @@ class LegalView: UIView {
     }
 
     @objc func touchDown(sender: UIButton!) {
-        sender.setTitleColor(UIColor.green, for: .normal)
+        sender.setTitleColor(UIColor.white, for: .normal)
+        sender.backgroundColor(#colorLiteral(red: 0.36862745098, green:0.69019607843, blue:0.87450980392, alpha: 1))
     }
 
     func onAccept(callback: @escaping () -> Void) {
@@ -95,6 +100,7 @@ class LegalView: UIView {
         field.isScrollEnabled = true
         field.isUserInteractionEnabled = true
         field.isEditable = false
+        field.textColor = #colorLiteral(red:0.2, green: 0.2, blue: 0.2, alpha: 1)
 
 
         titleField = UITextView()
@@ -104,6 +110,7 @@ class LegalView: UIView {
         titleField.font = UIFont.boldSystemFont(ofSize: 25)
         titleField.text = "Terms of Service"
         titleField.isScrollEnabled = false
+        titleField.textColor = #colorLiteral(red:0.2, green: 0.2, blue: 0.2, alpha: 1)
         
         addSubview(field)
         addSubview(titleField)
@@ -132,15 +139,14 @@ class LegalView: UIView {
         addSubview(acceptButton)
 
         acceptButton.setTitle("Accept", for: .normal)
-        acceptButton.setTitleColor(UIColor(red: 242, green: 242, blue: 242, alpha: 1), for: .normal)
         acceptButton.addTarget(self, action: #selector(acceptTouchUp), for: .touchUpInside)
         acceptButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
-        acceptButton.backgroundColor = UIColor(red:47, green: 128, blue:237, alpha: 1)
+        acceptButton.backgroundColor = #colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1)
+        acceptButton.layer.backgroundColor = #colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1)
         acceptButton.layer.cornerRadius = 10
-        // acceptButton.layer.borderWidth = 1
-        // acceptButton.layer.borderColor = UIColor.black.cgColor
-        // acceptButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
-        acceptButton.setTitleColor(UIColor(red: 242, green: 242, blue: 242, alpha: 1), for: .normal)
+        acceptButton.setTitleColor(UIColor.white, for: .normal)
+        acceptButton.foregroundColor(.white)
+
         let acceptWidthConstraint =
             NSLayoutConstraint(item: acceptButton, attribute: NSLayoutConstraint.Attribute.width,
                                relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute,
@@ -151,15 +157,14 @@ class LegalView: UIView {
                                multiplier: 1, constant: 60)
 
         declineButton.setTitle("Decline", for: .normal)
-        declineButton.setTitleColor(UIColor(red: 242, green: 242, blue: 242, alpha: 1), for: .normal)
+        declineButton.setTitleColor(UIColor.white, for: .normal)
         declineButton.addTarget(self, action: #selector(touchDown), for: .touchDown)
         declineButton.addTarget(self, action: #selector(declineTouchUp), for: .touchUpInside)
-        declineButton.backgroundColor = UIColor(red:47, green: 128, blue:237, alpha: 1)
+        declineButton.backgroundColor = #colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1)
+        declineButton.layer.backgroundColor = #colorLiteral(red: 0.18431372549, green: 0.50196078431, blue: 0.9294117647, alpha: 1)
         declineButton.layer.cornerRadius = 10
-        // declineButton.layer.borderWidth = 1
-        // declineButton.layer.borderColor = UIColor.black.cgColor
-        // declineButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
-        declineButton.setTitleColor(UIColor(red: 242, green: 242, blue: 242, alpha: 1), for: .normal)
+        declineButton.foregroundColor(.white)
+    
         let declineWidthConstraint = NSLayoutConstraint(item: declineButton, attribute: NSLayoutConstraint.Attribute.width,
                                                         relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130)
         let declineHeightConstraint = NSLayoutConstraint(item: declineButton, attribute: NSLayoutConstraint.Attribute.height,

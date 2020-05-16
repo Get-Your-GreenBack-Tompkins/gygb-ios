@@ -58,7 +58,7 @@ struct SigninView: View {
                     .padding(.top, 35)
                     .frame(width: 120, height: 15)
                     // .buttonStyle(BoothPrimaryButtonStyle())
-                    .backgroundColor(UIColor(red: 47/255.0, green: 128/255.0, blue:237255.0, alpha:1))
+                    .backgroundColor(UIColor(red: 47/255.0, green: 128/255.0, blue:237/255.0, alpha:1))
                     .foregroundColor(UIColor(red: 244/255.0, green:244/255.0, blue:244/255.0, alpha:1))
             }.padding(.bottom, 400)
         }

@@ -63,6 +63,7 @@ public struct BoothSelectionView: View {
                     self.pendingImage = nil
                     self.pendinguiImage = nil
                 })
+                .backgroundColor(#colorLiteral(red: 0.95686274509, green: 0.95686274509, blue: 0.95686274509, alpha: 1))
             } else if !self.done {
                 VStack {
                     GridView(items: $images, uiitems: $uiImages, maxItemCount: 4, columnCount: 2,
@@ -75,6 +76,7 @@ public struct BoothSelectionView: View {
                                 self.uiImages.remove(at: itemIndex)
                      })
                         .padding(.bottom, 20)
+                        .backgroundColor(#colorLiteral(red: 0.95686274509, green: 0.95686274509, blue: 0.95686274509, alpha: 1))
                     Button(action: {
                         self.done = true
                     }, label: {
@@ -82,7 +84,6 @@ public struct BoothSelectionView: View {
                     })
                     .frame(width: 130, height: 20)
                     .buttonStyle(BoothPrimaryButtonStyle())
-                    .backgroundColor((UIColor(red: 47/255.0, green: 128/255.0, blue: 237/255.0, alpha: 1))
                     .padding(.bottom, 50)
                     .cornerRadius(30)
                 }
@@ -90,6 +91,7 @@ public struct BoothSelectionView: View {
             else if !imageUploaded {
                 UploadView(images: uiImages, emailSent: emailSent, uploadDone: uploadDone)
                     .environmentObject(self.settings)
+                    .backgroundColor(#colorLiteral(red: 0.95686274509, green: 0.95686274509, blue: 0.95686274509, alpha: 1))
             }
             else {
                 ImageSent(emailSent: emailSent)
@@ -106,6 +108,6 @@ struct BoothSelectionView_Previews: PreviewProvider {
             minHeight: 0,
             maxHeight: .infinity,
             alignment: Alignment.topLeading
-        )
+        ).backgroundColor(#colorLiteral(red: 0.95686274509, green: 0.95686274509, blue: 0.95686274509, alpha: 1))
     }
 }
