@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct LegalViewRepresentable: UIViewRepresentable {
     var accept: () -> Void
@@ -77,18 +78,23 @@ class LegalView: UIView {
         clipsToBounds = true
 
         field = UITextView()
+        AF.request("https://gygb-backend-v1.herokuapp.com/v1/tos/hotshot", method: .get)
+            .responseJSON {response in
+                if let data = response.data {
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
+                    let htmlData = NSString(string: (json?["text"])!).data(using: String.Encoding.unicode.rawValue)
+                    let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+                    let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+                    self.field.attributedText = attributedString
+                    self.field.font = .systemFont(ofSize: 25)
+                }
+        }
         field.clipsToBounds = true
         field.translatesAutoresizingMaskIntoConstraints = false
-        field.text = """
-        By using this app, you agree to the following terms:
-        
-        • Temporary storage of images for the shorter of 30 days or until time of download.
-        • Granting access to your email address for delivery of thermal photos.
-        """
         field.isScrollEnabled = true
         field.isUserInteractionEnabled = true
         field.isEditable = false
-        field.font = .systemFont(ofSize: 25)
+
 
         titleField = UITextView()
         titleField.clipsToBounds = true
