@@ -21,7 +21,6 @@ struct WelcomeView: View {
     public var body: some View {
         return VStack {
             Image("HotShot").resizable().scaledToFit().frame(width: UIScreen.main.bounds.width - 200, height: 300)
-            .foregroundColor(.white)
             Button(action: {
                 self.accept()
             }, label: { Text("Start") })

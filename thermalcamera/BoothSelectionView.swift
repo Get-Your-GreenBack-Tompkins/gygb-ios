@@ -15,10 +15,15 @@ public struct BoothSelectionView: View {
     @State var pendingImage: Image?
     @State var pendinguiImage: UIImage?
     @State var showCamera: Bool = true
+    @State var imageUploaded: Bool = false
     @State var done: Bool = false
     var emailSent: () -> Void
     @EnvironmentObject var settings: SessionSettings
 
+    func uploadDone() {
+        self.imageUploaded = true
+    }
+    
     public init(emailSent: @escaping () -> Void) {
         self.emailSent = emailSent
     }
@@ -38,8 +43,8 @@ public struct BoothSelectionView: View {
         
         return Group {
             if showCamera {
-                 ThermalCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
-//                NativeCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
+//                 ThermalCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
+                NativeCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
             } else if pendingImage != nil && pendinguiImage != nil {
                 CaptureReviewView(image: $pendingImage, uiimage: $pendinguiImage, discard: {
                     self.pendingImage = nil
@@ -82,9 +87,12 @@ public struct BoothSelectionView: View {
                     .cornerRadius(30)
                 }
             }
-            else {
-                UploadView(images: uiImages, emailSent: emailSent)
+            else if !imageUploaded {
+                UploadView(images: uiImages, emailSent: emailSent, uploadDone: uploadDone)
                     .environmentObject(self.settings)
+            }
+            else {
+                ImageSent(emailSent: emailSent)
             }
         }
     }
