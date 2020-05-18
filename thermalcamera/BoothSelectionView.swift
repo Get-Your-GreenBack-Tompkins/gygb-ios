@@ -43,8 +43,8 @@ public struct BoothSelectionView: View {
         
         return Group {
             if showCamera {
-//                 ThermalCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
-                NativeCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
+                 ThermalCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
+//                NativeCameraView(isShown: $showCamera, image: currentImage, uiImage: currentuiImage)
             } else if pendingImage != nil && pendinguiImage != nil {
                 CaptureReviewView(image: $pendingImage, uiimage: $pendinguiImage, discard: {
                     self.pendingImage = nil
@@ -74,7 +74,7 @@ public struct BoothSelectionView: View {
                                 self.images.remove(at: itemIndex)
                                 self.uiImages.remove(at: itemIndex)
                      })
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 10)
                     Button(action: {
                         self.done = true
                     }, label: {
@@ -82,7 +82,7 @@ public struct BoothSelectionView: View {
                     })
                     .frame(width: 130, height: 20)
                     .buttonStyle(BoothPrimaryButtonStyle())
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 100)
                 }
             }
             else if !imageUploaded {

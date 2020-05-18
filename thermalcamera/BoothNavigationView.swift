@@ -44,7 +44,9 @@ struct BoothNavigationView: View {
 //        self.accepted = true 
     }
 
-    func decline() {}
+    func decline() {
+        self.welcomeaccepted = false
+    }
 
     func emailSent() {
         self.accepted = false

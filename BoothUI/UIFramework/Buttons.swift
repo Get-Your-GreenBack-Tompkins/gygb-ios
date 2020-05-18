@@ -48,7 +48,7 @@ public struct BoothTertiaryButtonStyle: ButtonStyle {
         configuration.label
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
-            .foregroundColor(#colorLiteral(red:0.2, green: 0.2, blue: 0.2, alpha: 1))
+            .foregroundColor(Color(red:0.2, green: 0.2, blue: 0.2))
             .background(Color(red: 224 / 255.0, green: 224 / 255.0, blue: 224 / 255.0))
             .cornerRadius(50)
             .shadow(color: Color(

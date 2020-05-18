@@ -42,6 +42,7 @@ struct CheckView: View {
             HStack{
                 Image(systemName: isChecked! ? "checkmark.square": "square")
                 Text(title).foregroundColor(Color.black)
+                                    .font(.system(size: 20))
             }
         }
     }
@@ -80,7 +81,7 @@ struct UploadView: View {
                 Text("Send your images to yourself!")
                     .bold()
                     .font(.system(size: 25))
-                    .padding(.bottom, 200)
+                    .padding(.bottom, 80)
                 VStack {
                     HStack {
                         ForEach(Array(0...self.images.count - 1), id: \.self) { index in
@@ -89,12 +90,21 @@ struct UploadView: View {
                             .cornerRadius(5)
                         }
                     }
+                    .padding(.bottom, 20)
                     TextField("Enter your email!", text: $email)
-                        .frame(width: 150, height: 30, alignment: .center)
+                        .frame(width: 200, height: 40, alignment: .center)
                         .padding(.top, 10)
                         .padding(.bottom, 10)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     CheckView(checked: $checked)
+                    Text("""
+We never spam. We're here to serve you!
+
+Our only purpose is to provide you with
+key information that can help you save
+money and live more environmentally.
+""")
+                        .frame(width: 320, height: 120)
                     Button(action: {
                         self.sendingText = "Sending photo..."
                         let dateFormatter = DateFormatter()
@@ -137,11 +147,12 @@ struct UploadView: View {
                     }, label: {
                         Text("Send Photos")
                     })
-                        .padding(.top, 40)
+                        .padding(.top, 80)
                     .frame(width: 220, height: 15)
                     .buttonStyle(BoothPrimaryButtonStyle())
                 }
+                .padding(.top, 50)
                 Text("\(sendingText)").padding(.top, 50).padding(.bottom, 330)
-        })
+            }.padding(.top, 100))
     }
 }
