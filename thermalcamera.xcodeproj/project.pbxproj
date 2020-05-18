@@ -17,7 +17,6 @@
 		08B22983246DC2BD00493D80 /* ImageSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B22982246DC2BD00493D80 /* ImageSent.swift */; };
 		08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */; };
 		08D67CB023DFAD2D00B92CB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */; };
-		08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CB123DFAD2D00B92CB5 /* ViewController.swift */; };
 		08D67CB723DFAD3000B92CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08D67CB623DFAD3000B92CB5 /* Assets.xcassets */; };
 		08D67CC523DFAD3000B92CB5 /* thermalcameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CC423DFAD3000B92CB5 /* thermalcameraTests.swift */; };
 		08D67CD023DFAD3000B92CB5 /* thermalcameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D67CCF23DFAD3000B92CB5 /* thermalcameraUITests.swift */; };
@@ -25,7 +24,6 @@
 		20908269244BFE4200AABF56 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20908268244BFE4200AABF56 /* UIFramework.framework */; };
 		2090826A244BFE4200AABF56 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20908268244BFE4200AABF56 /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20CD9790244BA0AA000213BF /* validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9788244BA0AA000213BF /* validation.swift */; };
-		20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9789244BA0AA000213BF /* DashboardViewController.swift */; };
 		20CD9798244BA290000213BF /* BoothSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD9797244BA290000213BF /* BoothSelectionView.swift */; };
 		20CD979A244BB302000213BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20CD9799244BB302000213BF /* Default-568h@2x.png */; };
 		20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD97DF244BE076000213BF /* FirebaseSession.swift */; };
@@ -87,7 +85,6 @@
 		08D67CAA23DFAD2D00B92CB5 /* thermalcamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thermalcamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D67CAD23DFAD2D00B92CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08D67CAF23DFAD2D00B92CB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08D67CB123DFAD2D00B92CB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08D67CB623DFAD3000B92CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08D67CBB23DFAD3000B92CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D67CC023DFAD3000B92CB5 /* thermalcameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thermalcameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +98,6 @@
 		20908254244BFCDD00AABF56 /* BoothUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = BoothUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20908268244BFE4200AABF56 /* UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CD9788244BA0AA000213BF /* validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = validation.swift; sourceTree = "<group>"; };
-		20CD9789244BA0AA000213BF /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		20CD9797244BA290000213BF /* BoothSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoothSelectionView.swift; sourceTree = "<group>"; };
 		20CD9799244BB302000213BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		20CD97DF244BE076000213BF /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
@@ -186,7 +182,6 @@
 				083426DA245A797500FDE90D /* GYGBlogo.png */,
 				20CD97E3244BE316000213BF /* BoothNavigationView.swift */,
 				20CD9797244BA290000213BF /* BoothSelectionView.swift */,
-				20CD9789244BA0AA000213BF /* DashboardViewController.swift */,
 				20CD97E5244BF991000213BF /* EmailView.swift */,
 				20CD97DF244BE076000213BF /* FirebaseSession.swift */,
 				20CD97E1244BE28E000213BF /* FirebaseUser.swift */,
@@ -197,7 +192,6 @@
 				08D67CE723DFB0FA00B92CB5 /* thermalcamera-Bridging-Header.h */,
 				206949AC244CA99200040DF3 /* ThermalCameraView.swift */,
 				20CD9788244BA0AA000213BF /* validation.swift */,
-				08D67CB123DFAD2D00B92CB5 /* ViewController.swift */,
 				08261771245657EC004DCE83 /* UploadView.swift */,
 				083426DC245A7AC000FDE90D /* WelcomeView.swift */,
 				08B22982246DC2BD00493D80 /* ImageSent.swift */,
@@ -548,7 +542,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08D67CB223DFAD2D00B92CB5 /* ViewController.swift in Sources */,
 				088D1DE223F7487D00BFD4D3 /* SigninView.swift in Sources */,
 				08D67CAE23DFAD2D00B92CB5 /* AppDelegate.swift in Sources */,
 				083426DD245A7AC000FDE90D /* WelcomeView.swift in Sources */,
@@ -560,7 +553,6 @@
 				087869D0240DDED90057133B /* LegalView.swift in Sources */,
 				206949AD244CA99200040DF3 /* ThermalCameraView.swift in Sources */,
 				20CD97E4244BE316000213BF /* BoothNavigationView.swift in Sources */,
-				20CD9791244BA0AA000213BF /* DashboardViewController.swift in Sources */,
 				08261772245657EC004DCE83 /* UploadView.swift in Sources */,
 				08B22983246DC2BD00493D80 /* ImageSent.swift in Sources */,
 				20CD97E0244BE076000213BF /* FirebaseSession.swift in Sources */,

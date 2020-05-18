@@ -50,7 +50,7 @@ public struct CaptureReviewView: View {
                         Text("Discard")
                     }
                 )
-                .buttonStyle(BoothSecondaryButtonStyle())
+                .buttonStyle(BoothTertiaryButtonStyle())
                 .alignmentGuide(HorizontalAlignment.leading) {
                     (elem) -> CGFloat in elem[HorizontalAlignment.leading]
                 }

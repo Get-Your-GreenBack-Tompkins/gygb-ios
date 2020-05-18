@@ -15,14 +15,14 @@ class DashboardViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    container = UIView()
+    container = UIView().background(Color(red:0.95686274509, green:0.95686274509, blue:0.95686274509,alpha: 1))
     let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44)) // Offset by 20 pixels vertically to take the status bar into account
 
     navigationBar.backgroundColor = UIColor.white
 
     // Create a navigation item with a title
     let navigationItem = UINavigationItem()
-    navigationItem.title = "Get Your Greenback Tompkins"
+    navigationItem.title = "Powerhouse HotShot"
 
     // Create left and right button for navigation item
 
