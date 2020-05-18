@@ -31,6 +31,9 @@ public struct CaptureReviewView: View {
 
             Group {
                 if image != nil {
+                    Text("Here's your image! You can save up to 4.")
+                    .font(.system(size: 25))
+                    .padding(.bottom, 25)
                     image?.resizable().frame(width: 250, height: 250).background(Color.black).cornerRadius(30)
                 } else {
                     Text("No Source Detected")
@@ -53,7 +56,7 @@ public struct CaptureReviewView: View {
                 }
                 .frame(width: 120)
 
-                Spacer()
+//                Spacer()
 
                 Button(
                     action: {

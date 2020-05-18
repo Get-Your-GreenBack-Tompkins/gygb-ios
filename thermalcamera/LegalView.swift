@@ -138,7 +138,7 @@ class LegalView: UIView {
         acceptButton.layer.cornerRadius = 5
         acceptButton.layer.borderWidth = 1
         acceptButton.layer.borderColor = UIColor.black.cgColor
-        acceptButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
+        acceptButton.layer.backgroundColor = #colorLiteral(red: 0.184313725, green: 0.501960784, blue: 0.929411765, alpha: 1)
         acceptButton.setTitleColor(UIColor.white, for: .normal)
         let acceptWidthConstraint =
             NSLayoutConstraint(item: acceptButton, attribute: NSLayoutConstraint.Attribute.width,
@@ -157,7 +157,7 @@ class LegalView: UIView {
         declineButton.layer.cornerRadius = 5
         declineButton.layer.borderWidth = 1
         declineButton.layer.borderColor = UIColor.black.cgColor
-        declineButton.layer.backgroundColor = #colorLiteral(red: 0.5382429361, green: 0.7149507403, blue: 0.32184273, alpha: 1)
+        declineButton.layer.backgroundColor = #colorLiteral(red: 0.364705882, green: 0.690196078, blue: 0.866666667, alpha: 1)
         declineButton.setTitleColor(UIColor.white, for: .normal)
         let declineWidthConstraint = NSLayoutConstraint(item: declineButton, attribute: NSLayoutConstraint.Attribute.width,
                                                         relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 130)

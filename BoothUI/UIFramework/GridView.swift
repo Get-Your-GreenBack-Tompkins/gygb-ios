@@ -101,18 +101,28 @@ struct InternalGridView<Element>: View where Element: View {
             ForEach(row, id: \.self) { item in
                 Group {
                     if item >= self.items.count {
-                        if item == self.items.count {
-                            self.addButton(index: item - 1)
-                        } else {
-                            Text("This shouldn't happen!")
-                        }
+                        self.addButton(index: item - 1)
                     } else {
+                        ZStack {
                         self.items[item]
                             .frame(width: self.itemWidth, height: self.itemWidth)
                             .cornerRadius(40)
-                            .onTapGesture(count: 1) {
-                                self.deleteItem(item)
-                            }
+                        Button(action: { self.deleteItem(item) }, label: {Image(systemName: "multiply")
+                            .font(.body)
+                            .foregroundColor(
+                            Color(
+                                red: 127 / 255.0,
+                                green: 127 / 255.0,
+                                blue: 127 / 255.0
+                            ))
+                            .zIndex(10)
+                        })
+                            .padding(.bottom, self.itemWidth - 30)
+                            .padding(.leading, self.itemWidth - 30)
+                            .frame(width: 25, height: 25)
+                            .buttonStyle(BoothAddItemBackgroundStyle())
+                            
+                        }
                     }
                 }
             }.padding(.horizontal, self.spacing / 2)
